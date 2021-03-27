@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Property Details"
+            android:paddingLeft="@dimen/_10sdp"
+            android:fontFamily="@font/arialmt"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv1"
+                android:text="Property Type :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="116dp"
+                android:layout_toRightOf="@+id/tv1"
+                android:fontFamily="@font/arialmt"
+                android:text="Apartment"
+                android:id="@+id/tv2"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv3"
+                android:layout_below="@+id/tv1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Age Of Property :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="126dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv2"
+                android:layout_below="@+id/tv2"
+                android:id="@+id/tv4"
+                android:fontFamily="@font/arialmt"
+                android:text="2-5 Yrs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv3"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Total Floor :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv2"
+                android:layout_below="@+id/tv4"
+                android:fontFamily="@font/arialmt"
+                android:text="4"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv7"
+                android:text="Property Status :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="125dp"
+                android:layout_toRightOf="@+id/tv7"
+                android:fontFamily="@font/arialmt"
+                android:text="For Sale"
+                android:id="@+id/tv8"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv9"
+                android:layout_below="@+id/tv8"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Ownership :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="96dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv8"
+                android:layout_below="@+id/tv7"
+                android:id="@+id/tv10"
+                android:fontFamily="@font/arialmt"
+                android:text="Freehold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv9"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Property On Floor :"
+                android:id="@+id/tv11"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv11"
+                android:layout_below="@+id/tv10"
+                android:fontFamily="@font/arialmt"
+                android:text="3"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_sale_price"
+                android:text="Sale Price :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="86dp"
+                android:layout_toRightOf="@+id/tv_sale_price"
+                android:fontFamily="@font/arialmt"
+                android:text="Rs. 1.92 Cr"
+                android:id="@+id/tvprice"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_bed_room"
+                android:layout_below="@+id/tvprice"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Bedrooms :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="86dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_bed_room"
+                android:layout_below="@+id/tvprice"
+                android:id="@+id/tvthree"
+                android:fontFamily="@font/arialmt"
+                android:text="3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_bed_room"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Reserved Parking :"
+                android:id="@+id/tv_reserved"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_reserved"
+                android:layout_below="@+id/tvthree"
+                android:fontFamily="@font/arialmt"
+                android:text="4 wheeler"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_price_negotable"
+                android:text="Price Negotiable :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="130dp"
+                android:layout_toRightOf="@+id/tv_price_negotable"
+                android:fontFamily="@font/arialmt"
+                android:text="Yes"
+                android:id="@+id/tvyes"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_bedroom"
+                android:layout_below="@+id/tv_price_negotable"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Bathrooms :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_bedroom"
+                android:layout_below="@+id/tvyes"
+                android:id="@+id/tv_three"
+                android:fontFamily="@font/arialmt"
+                android:text="3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_bedroom"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Facing :"
+                android:id="@+id/tv_facing"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_facing"
+                android:layout_below="@+id/tv_three"
+                android:fontFamily="@font/arialmt"
+                android:text="South"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_price_perunit"
+                android:text="Price Per Unit :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="110dp"
+                android:layout_toRightOf="@+id/tv_price_perunit"
+                android:fontFamily="@font/arialmt"
+                android:text="Rs. 10,378/Sq. Ft"
+                android:id="@+id/tvrs"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_balconies"
+                android:layout_below="@+id/tv_price_perunit"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Balconies :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_balconies"
+                android:layout_below="@+id/tvrs"
+                android:fontFamily="@font/arialmt"
+                android:text="2"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_availability"
+                android:text="Availability  :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_toRightOf="@+id/tv_availability"
+                android:fontFamily="@font/arialmt"
+                android:text=" Ready to Move"
+                android:id="@+id/tvready"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/tv_furnishing"
+                android:layout_below="@+id/tv_availability"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Furnishing :"
+                android:fontFamily="@font/arialmt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_furnishing"
+                android:layout_below="@+id/tvready"
+                android:fontFamily="@font/arialmt"
+                android:text="Semi furnished"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Amenities"
+                android:fontFamily="@font/arialmt"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_open"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/tv_lift"
+                    android:text="Lift"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/arialmt"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_security"
+                    android:layout_marginLeft="@dimen/_50sdp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/tv_Security"
+                    android:text="Security"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/arialmt"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

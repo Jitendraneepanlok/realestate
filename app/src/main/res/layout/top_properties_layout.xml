@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_75sdp"
+                android:src="@drawable/login_1"
+                android:layout_margin="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:background="@drawable/imgage_style"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7BHK Apartment for Sale in Dum Dum Park"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_below="@+id/image"
+                android:paddingLeft="@dimen/_7sdp"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_title"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:fontFamily="@font/arialmt"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:singleLine="true"
+                android:id="@+id/tvlocation"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:drawableLeft="@drawable/ic_location"
+                android:paddingLeft="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:text=" Chennai, Tamil Nadu , India"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvlocation"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_bhk"
+                android:drawableLeft="@drawable/ic_open"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/black"
+                android:text=" BHK :- 2-3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_bhk"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_area"
+                android:drawableLeft="@drawable/ic_open"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/black"
+                android:text=" Area 1200-1500 (Sqft.)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_area"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_price"
+                android:drawableLeft="@drawable/ic_open"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/black"
+                android:text=" Price: 444-555 (Rs)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_project"
+                android:drawableLeft="@drawable/ic_open"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/black"
+                android:text=" Project Status : Completed" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_project"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:singleLine="true"
+                android:fontFamily="@font/arialmt"
+                android:id="@+id/tv_read"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/red"
+                android:text="Read More"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                android:layout_below="@+id/tv_read"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:id="@+id/line_view"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arialmt"
+                android:textColor="@color/black"
+                android:text="444 / Month"
+                android:layout_below="@+id/line_view"
+                android:textStyle="bold"
+                android:id="@+id/tvprice"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line_view"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@+id/tvprice"
+                android:src="@drawable/ic_checkmark" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

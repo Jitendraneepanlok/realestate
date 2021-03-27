@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/agent_image"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0 Sale Properties"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 Operational Localities"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Role :"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agent"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business Title :"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test Business"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Country India"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_10sdp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State Karnataka"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City Bengaluru"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business Address :"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Verified :"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textColor="@color/black"
+                android:fontFamily="@font/arialmt"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

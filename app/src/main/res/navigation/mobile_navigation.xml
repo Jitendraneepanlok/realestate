@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_popular_search"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.popularsearch.PopularSearchFragment"
+        android:label="@string/popular_search"
+        tools:layout="@layout/fragment_popular_searches">
+
+        <action
+            android:id="@+id/action_popularSearchFragment_to_findAgentFragment"
+            app:destination="@id/nav_find_agent"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/action_popularSearchFragment_to_residiantialpropertyFragment"
+            app:destination="@id/nav_residential_property"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/action_popularSearchFragment_to_postPropertyFragment"
+            app:destination="@id/nav_post_property"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/action_popularSearchFragment_to_commercialFragment"
+            app:destination="@id/nav_post_commercial"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_post_commercial"
+        android:name="com.tutorial.realestate.Fragments.CommercialFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_commercial">
+
+        <action
+            android:id="@+id/action_commercialFragment_to_CommercialDetails"
+            app:destination="@id/nav_post_commercial_details"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_post_commercial_details"
+        android:name="com.tutorial.realestate.Fragments.CommercialDetails"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_commercial_details"/>
+
+    <fragment
+        android:id="@+id/nav_post_property"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.postproperty.PostPropertyFragment"
+        android:label="@string/post_properties"
+        tools:layout="@layout/fragment_post_properties" />
+
+
+
+    <fragment
+        android:id="@+id/nav_residential_property"
+        android:name="com.tutorial.realestate.Fragments.ResidentialProprtyFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_resideiantial">
+
+        <action
+            android:id="@+id/action_residiantialpropertyFragment_to_propertyDetailsFragment"
+            app:destination="@id/nav_property_deatils"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_property_deatils"
+        android:name="com.tutorial.realestate.Fragments.PropertyDetailsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_property_details"/>
+
+    <fragment
+        android:id="@+id/nav_find_agent"
+        android:name="com.tutorial.realestate.Fragments.FindAgentFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_find_agent">
+        <action
+            android:id="@+id/action_findAgentFragment_to_agentprofileFragment"
+            app:destination="@id/nav_agent_profile"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_agent_profile"
+        android:name="com.tutorial.realestate.Fragments.AgentProfileFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_agent_profile"/>
+
+
+    <fragment
+        android:id="@+id/nav_quick_links"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.quicklinks.QuickLinkFragment"
+        android:label="@string/quick_link"
+        tools:layout="@layout/fragment_quick_links"/>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_top_properties"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.topproperties.TopPropertiesFragment"
+        android:label="@string/top_properties"
+        tools:layout="@layout/fragment_top_properties" />
+
+
+
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.settings.SeetingFragment"
+        android:label="@string/setting"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_SeetingFragment_to_changePasswordFragment"
+            app:destination="@id/nav_change_password"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/action_SeetingFragment_to_updateProfileFragment"
+            app:destination="@id/nav_update_profile"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_change_password"
+        android:name="com.tutorial.realestate.Fragments.ChangePasswordFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_change_password"/>
+
+    <fragment
+        android:id="@+id/nav_update_profile"
+        android:name="com.tutorial.realestate.Fragments.UpdateProfileFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_update_profile"/>
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.notification.NotificationFragment"
+        android:label="@string/notification"
+        tools:layout="@layout/fragment_notification"/>
+
+
+    <fragment
+        android:id="@+id/nav_others"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.others.OthersFragment"
+        android:label="@string/other"
+        tools:layout="@layout/fragment_others"/>
+
+
+</navigation>
