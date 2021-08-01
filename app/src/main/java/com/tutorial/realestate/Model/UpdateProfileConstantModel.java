@@ -3,16 +3,17 @@ package com.tutorial.realestate.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginModel {
+public class UpdateProfileConstantModel {
     @SerializedName("realstate")
     @Expose
-    private LoginData realstate;
+    private UpdateProfileModel realstate;
 
-    public LoginData getRealstate() {
+    public UpdateProfileModel getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(LoginData realstate) {
+    public void setRealstate(UpdateProfileModel realstate) {
         this.realstate = realstate;
     }
+
 }

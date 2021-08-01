@@ -3,7 +3,7 @@ package com.tutorial.realestate.Pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ForgetPasswordResponse {
+public class MobileVerifyResponse {
 
     @SerializedName("resMessage")
     @Expose
@@ -11,9 +11,6 @@ public class ForgetPasswordResponse {
     @SerializedName("response")
     @Expose
     private String response;
-    @SerializedName("status")
-    @Expose
-    private Boolean status;
 
     public String getResMessage() {
         return resMessage;
@@ -30,13 +27,4 @@ public class ForgetPasswordResponse {
     public void setResponse(String response) {
         this.response = response;
     }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    }
+}

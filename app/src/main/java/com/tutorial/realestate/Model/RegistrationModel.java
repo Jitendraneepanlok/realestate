@@ -4,49 +4,71 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RegistrationModel {
-    @SerializedName("first_name")
+
+    @SerializedName("reg_user_name")
     @Expose
-    private String firstName;
-    @SerializedName("email")
+    private String regUserName;
+    @SerializedName("reg_email")
     @Expose
-    private String email;
-    @SerializedName("password")
+    private String regEmail;
+    @SerializedName("country_code")
     @Expose
-    private String password;
-    @SerializedName("contact")
+    private String countryCode;
+    @SerializedName("contact_number")
     @Expose
-    private String contact;
+    private String contactNumber;
+    @SerializedName("reg_user_password")
+    @Expose
+    private String regUserPassword;
+    @SerializedName("user_type")
+    @Expose
+    private String userType;
 
-    public String getFirstName() {
-        return firstName;
+    public String getRegUserName() {
+        return regUserName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setRegUserName(String regUserName) {
+        this.regUserName = regUserName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getRegEmail() {
+        return regEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRegEmail(String regEmail) {
+        this.regEmail = regEmail;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
-    public String getContact() {
-        return contact;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
+    public String getRegUserPassword() {
+        return regUserPassword;
+    }
+
+    public void setRegUserPassword(String regUserPassword) {
+        this.regUserPassword = regUserPassword;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
 }

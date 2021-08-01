@@ -22,11 +22,14 @@ import androidx.navigation.Navigation;
 import com.tutorial.realestate.Activity.LoginActivity;
 import com.tutorial.realestate.Interface.ApiClient;
 import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Model.ChangePassConstant;
 import com.tutorial.realestate.Model.ChangePasswordModel;
 import com.tutorial.realestate.Model.ForgetPasswordModel;
 import com.tutorial.realestate.NavigationActivity.HomeActivity;
+import com.tutorial.realestate.Pojo.ChangePassContantPojo;
 import com.tutorial.realestate.Pojo.ChangePassResponse;
 import com.tutorial.realestate.Pojo.ForgetPasswordResponse;
+import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
 
 import retrofit2.Call;
@@ -35,10 +38,10 @@ import retrofit2.Callback;
 public class ChangePasswordFragment extends Fragment {
     private NavController navController;
     TextView tvhome;
-    EditText etoldpass,etnewpass,etconfpass;
+    EditText etoldpass,etnewpass;
     LinearLayout llbtn_submit;
     private ProgressDialog pDialog;
-    String  OLD_PASSWORD,NEW_PASSWORD, CONFIRM_PASSWORD;
+    String  OLD_PASSWORD,NEW_PASSWORD;
     View view;
 
     @Nullable
@@ -54,7 +57,6 @@ public class ChangePasswordFragment extends Fragment {
     private void initView() {
         etoldpass = (EditText)view.findViewById(R.id.etoldpass);
         etnewpass = (EditText)view.findViewById(R.id.etnewpass);
-        etconfpass = (EditText)view.findViewById(R.id.etconfpass);
         llbtn_submit = (LinearLayout)view.findViewById(R.id.llbtn_submit);
         llbtn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,15 +78,10 @@ public class ChangePasswordFragment extends Fragment {
 
          OLD_PASSWORD = etoldpass.getText().toString().trim();
          NEW_PASSWORD = etnewpass.getText().toString().trim();
-         CONFIRM_PASSWORD = etconfpass.getText().toString().trim();
 
         if (!OLD_PASSWORD.equals("")){
             if (!NEW_PASSWORD.equals("")){
-                if (!CONFIRM_PASSWORD.equals("")){
-                    ChangePasswordApi();
-                }else {
-                    etconfpass.setError("Enter your confirm password");
-                }
+                ChangePasswordApi();
             }else {
                 etnewpass.setError("Enter your new password");
             }
@@ -98,34 +95,40 @@ public class ChangePasswordFragment extends Fragment {
         pDialog.setMessage("Please wait...");
         pDialog.setCancelable(false);
         pDialog.show();
+        SessionManager sessionManager = new SessionManager(getActivity());
+        String UID = sessionManager.getUserData(SessionManager.UID);
+
 
         ChangePasswordModel changePasswordModel= new ChangePasswordModel();
-        changePasswordModel.setCPassword(OLD_PASSWORD);
-        changePasswordModel.setNewPassword(NEW_PASSWORD);
-        changePasswordModel.setConfirmPassword(CONFIRM_PASSWORD);
+        changePasswordModel.setOldRegUserPassword(OLD_PASSWORD);
+        changePasswordModel.setRegUserPassword(NEW_PASSWORD);
+        changePasswordModel.setuID(UID);
+
+        ChangePassConstant changePassConstant = new ChangePassConstant();
+        changePassConstant.setRealstate(changePasswordModel);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<ChangePassResponse> call = apiService.postchangepass("application/json", changePasswordModel);
+        Call<ChangePassContantPojo> call = apiService.postchangepass(changePassConstant);
         try {
-            call.enqueue(new Callback<ChangePassResponse>() {
+            call.enqueue(new Callback<ChangePassContantPojo>() {
                 @Override
-                public void onResponse(Call<ChangePassResponse> call, retrofit2.Response<ChangePassResponse> response) {
+                public void onResponse(Call<ChangePassContantPojo> call, retrofit2.Response<ChangePassContantPojo> response) {
                     if (response.isSuccessful()) {
                         Log.e("Response", "" + response.body().toString());
-                        Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
 
-                        etoldpass.setText("");
-                        etnewpass.setText("");
-                        etconfpass.setText("");
+                       /* etoldpass.setText("");
+                        etnewpass.setText("");*/
+
                         pDialog.dismiss();
                     } else {
-                        Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
                         pDialog.cancel();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ChangePassResponse> call, Throwable t) {
+                public void onFailure(Call<ChangePassContantPojo> call, Throwable t) {
                     // Log error here since request failed
                     Toast.makeText(getActivity(), "" + t, Toast.LENGTH_SHORT).show();
                     Log.e("Failer", "" + t);

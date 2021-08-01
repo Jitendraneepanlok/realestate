@@ -3,39 +3,39 @@ package com.tutorial.realestate.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-    public class ChangePasswordModel {
+public class ChangePasswordModel {
 
-        @SerializedName("c_password")
-        @Expose
-        private String cPassword;
-        @SerializedName("new_password")
-        @Expose
-        private String newPassword;
-        @SerializedName("confirm_password")
-        @Expose
-        private String confirmPassword;
+    @SerializedName("old_reg_user_password")
+    @Expose
+    private String oldRegUserPassword;
+    @SerializedName("reg_user_password")
+    @Expose
+    private String regUserPassword;
+    @SerializedName("uID")
+    @Expose
+    private String uID;
 
-        public String getCPassword() {
-            return cPassword;
-        }
+    public String getOldRegUserPassword() {
+        return oldRegUserPassword;
+    }
 
-        public void setCPassword(String cPassword) {
-            this.cPassword = cPassword;
-        }
+    public void setOldRegUserPassword(String oldRegUserPassword) {
+        this.oldRegUserPassword = oldRegUserPassword;
+    }
 
-        public String getNewPassword() {
-            return newPassword;
-        }
+    public String getRegUserPassword() {
+        return regUserPassword;
+    }
 
-        public void setNewPassword(String newPassword) {
-            this.newPassword = newPassword;
-        }
+    public void setRegUserPassword(String regUserPassword) {
+        this.regUserPassword = regUserPassword;
+    }
 
-        public String getConfirmPassword() {
-            return confirmPassword;
-        }
+    public String getuID() {
+        return uID;
+    }
 
-        public void setConfirmPassword(String confirmPassword) {
-            this.confirmPassword = confirmPassword;
-        }
+    public void setuID(String uID) {
+        this.uID = uID;
+    }
 }

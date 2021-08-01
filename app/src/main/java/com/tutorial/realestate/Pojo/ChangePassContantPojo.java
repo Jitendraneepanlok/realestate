@@ -1,18 +1,19 @@
-package com.tutorial.realestate.Model;
+package com.tutorial.realestate.Pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginModel {
+public class ChangePassContantPojo {
+
     @SerializedName("realstate")
     @Expose
-    private LoginData realstate;
+    private Realstate realstate;
 
-    public LoginData getRealstate() {
+    public Realstate getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(LoginData realstate) {
+    public void setRealstate(Realstate realstate) {
         this.realstate = realstate;
     }
 }

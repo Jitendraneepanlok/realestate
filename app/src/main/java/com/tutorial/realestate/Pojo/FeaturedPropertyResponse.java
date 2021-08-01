@@ -3,17 +3,18 @@ package com.tutorial.realestate.Pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ForgetPasswordResponse {
+import java.util.List;
 
+public class FeaturedPropertyResponse {
     @SerializedName("resMessage")
     @Expose
     private String resMessage;
     @SerializedName("response")
     @Expose
     private String response;
-    @SerializedName("status")
+    @SerializedName("FeaturedProperties")
     @Expose
-    private Boolean status;
+    private List<FeaturedPropertyPojo> featuredProperties = null;
 
     public String getResMessage() {
         return resMessage;
@@ -31,12 +32,11 @@ public class ForgetPasswordResponse {
         this.response = response;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public List<FeaturedPropertyPojo> getFeaturedProperties() {
+        return featuredProperties;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setFeaturedProperties(List<FeaturedPropertyPojo> featuredProperties) {
+        this.featuredProperties = featuredProperties;
     }
-
-    }
+}

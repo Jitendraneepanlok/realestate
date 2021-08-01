@@ -1,20 +1,19 @@
 package com.tutorial.realestate.Pojo;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+public class FeaturePropertiesContantPojo {
 
     @SerializedName("realstate")
     @Expose
-    private Realstate realstate;
+    private FeaturedPropertyResponse realstate;
 
-    public Realstate getRealstate() {
+    public FeaturedPropertyResponse getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(Realstate realstate) {
+    public void setRealstate(FeaturedPropertyResponse realstate) {
         this.realstate = realstate;
     }
 }

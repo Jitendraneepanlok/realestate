@@ -8,6 +8,10 @@ public class SessionManager {
 
     private SharedPreferences sharedPreferences;
     static public String USER_NAME = "user_name";
+    static public String UID = "id";
+    static public String JWT_TOKEN = "token";
+    static public String NAME = "name";
+
 
 
     public SessionManager(Context context) {

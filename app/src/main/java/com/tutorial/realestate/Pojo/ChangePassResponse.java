@@ -3,30 +3,39 @@ package com.tutorial.realestate.Pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-    public class ChangePassResponse {
+public class ChangePassResponse {
+    @SerializedName("resMessage")
+    @Expose
+    private String resMessage;
+    @SerializedName("response")
+    @Expose
+    private String response;
+    @SerializedName("data")
+    @Expose
+    private Boolean data;
 
-        @SerializedName("status")
-        @Expose
-        private Boolean status;
-        @SerializedName("message")
-        @Expose
-        private String message;
-
-        public Boolean getStatus() {
-            return status;
-        }
-
-        public void setStatus(Boolean status) {
-            this.status = status;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
+    public String getResMessage() {
+        return resMessage;
     }
+
+    public void setResMessage(String resMessage) {
+        this.resMessage = resMessage;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    public Boolean getData() {
+        return data;
+    }
+
+    public void setData(Boolean data) {
+        this.data = data;
+    }
+}
 

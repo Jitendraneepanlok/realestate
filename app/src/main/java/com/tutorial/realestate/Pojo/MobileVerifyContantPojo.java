@@ -1,20 +1,19 @@
 package com.tutorial.realestate.Pojo;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
-
+public class MobileVerifyContantPojo {
     @SerializedName("realstate")
     @Expose
-    private Realstate realstate;
+    private MobileVerifyResponse realstate;
 
-    public Realstate getRealstate() {
+    public MobileVerifyResponse getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(Realstate realstate) {
+    public void setRealstate(MobileVerifyResponse realstate) {
         this.realstate = realstate;
     }
+
 }

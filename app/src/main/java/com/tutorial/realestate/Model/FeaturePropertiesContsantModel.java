@@ -3,16 +3,16 @@ package com.tutorial.realestate.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginModel {
+public class FeaturePropertiesContsantModel {
     @SerializedName("realstate")
     @Expose
-    private LoginData realstate;
+    private FeaturePropertiesModel realstate;
 
-    public LoginData getRealstate() {
+    public FeaturePropertiesModel getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(LoginData realstate) {
+    public void setRealstate(FeaturePropertiesModel realstate) {
         this.realstate = realstate;
     }
 }

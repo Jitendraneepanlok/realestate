@@ -1,10 +1,13 @@
 package com.tutorial.realestate.NavigationActivity.ui.gallery;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,21 +18,35 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tutorial.realestate.Activity.VerifyMobileActivity;
 import com.tutorial.realestate.Adapter.BuyAdapter;
 import com.tutorial.realestate.Adapter.BuyFeatureProductAdapter;
 import com.tutorial.realestate.Helper.Album;
+import com.tutorial.realestate.Interface.ApiClient;
+import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Model.FeaturePropertiesContsantModel;
+import com.tutorial.realestate.Model.FeaturePropertiesModel;
+import com.tutorial.realestate.Model.MobileVerifyConstant;
+import com.tutorial.realestate.Model.MobileVerifyModel;
+import com.tutorial.realestate.Pojo.FeaturePropertiesContantPojo;
+import com.tutorial.realestate.Pojo.FeaturedPropertyPojo;
+import com.tutorial.realestate.Pojo.MobileVerifyContantPojo;
 import com.tutorial.realestate.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
 
 public class GalleryFragment extends Fragment {
     private RecyclerView featproduct_recyler;
     private BuyFeatureProductAdapter adapter;
-    private List<Album> albumList;
+    private List<FeaturedPropertyPojo> featuredPropertyList;
     private GalleryViewModel galleryViewModel;
     View root;
+    private ProgressDialog pDialog;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel = ViewModelProviders.of(this).get(GalleryViewModel.class);
@@ -42,6 +59,7 @@ public class GalleryFragment extends Fragment {
             }
         });*/
         initView();
+        FeaturedPropertyCallApi();
         return root;
     }
 
@@ -49,18 +67,21 @@ public class GalleryFragment extends Fragment {
 
         featproduct_recyler = (RecyclerView)root.findViewById(R.id.featproduct_recyler);
 
-        albumList = new ArrayList<>();
-        adapter = new BuyFeatureProductAdapter(getActivity(), albumList);
+        featuredPropertyList = new ArrayList<>();
+       // adapter = new BuyFeatureProductAdapter(getActivity(), albumList);
 
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         featproduct_recyler.setLayoutManager(verticalLayoutManager);
 
         featproduct_recyler.setItemAnimator(new DefaultItemAnimator());
-        featproduct_recyler.setAdapter(adapter);
+//        featproduct_recyler.setAdapter(adapter);
 
+/*
         prepareAlbums();
+*/
     }
 
+/*
     private void prepareAlbums() {
         int[] covers = new int[]{
                 R.drawable.login_1,
@@ -107,5 +128,50 @@ public class GalleryFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
     }
+*/
 
+    private void FeaturedPropertyCallApi() {
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Please wait...");
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        FeaturePropertiesModel featurePropertiesModel= new FeaturePropertiesModel();
+
+        FeaturePropertiesContsantModel featurePropertiesContsantModel = new FeaturePropertiesContsantModel();
+        featurePropertiesContsantModel.setRealstate(featurePropertiesModel);
+
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<FeaturePropertiesContantPojo> call = apiService.getFeatureProperties(featurePropertiesContsantModel);
+        try {
+            call.enqueue(new Callback<FeaturePropertiesContantPojo>() {
+                @Override
+                public void onResponse(Call<FeaturePropertiesContantPojo> call, retrofit2.Response<FeaturePropertiesContantPojo> response) {
+                    if (response.isSuccessful()) {
+                        Log.e("Response", "" + response.body().toString());
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
+                        adapter = new BuyFeatureProductAdapter(getActivity(), response.body());
+                        featproduct_recyler.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                        pDialog.dismiss();
+                    } else {
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
+                        pDialog.cancel();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<FeaturePropertiesContantPojo> call, Throwable t) {
+                    // Log error here since request failed
+                    Toast.makeText(getActivity(), "" + t, Toast.LENGTH_SHORT).show();
+                    Log.e("Failer", "" + t);
+                    pDialog.dismiss();
+                }
+            });
+        } catch (Exception ex) {
+            Log.e("LoginFailer", "" + ex);
+            Toast.makeText(getActivity(), "" + ex, Toast.LENGTH_SHORT).show();
+            pDialog.dismiss();
+        }
+    }
 }

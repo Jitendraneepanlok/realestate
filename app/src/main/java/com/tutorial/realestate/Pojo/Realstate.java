@@ -1,19 +1,16 @@
 package com.tutorial.realestate.Pojo;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-public class ForgetPasswordResponse {
-
+public class Realstate {
     @SerializedName("resMessage")
     @Expose
     private String resMessage;
     @SerializedName("response")
     @Expose
     private String response;
-    @SerializedName("status")
+    @SerializedName("data")
     @Expose
-    private Boolean status;
+    private Data data;
 
     public String getResMessage() {
         return resMessage;
@@ -31,12 +28,11 @@ public class ForgetPasswordResponse {
         this.response = response;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public Data getData() {
+        return data;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setData(Data data) {
+        this.data = data;
     }
-
-    }
+}

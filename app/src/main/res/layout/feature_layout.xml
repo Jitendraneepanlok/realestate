@@ -126,7 +126,7 @@
                 android:layout_below="@+id/tvaprtment"
                 android:fontFamily="@font/arialmt"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="@dimen/_170sdp"
+                android:layout_marginLeft="@dimen/_155sdp"
                 android:layout_marginTop="7dp"
                 android:layout_toRightOf="@id/tv_sqft"
                 android:drawableLeft="@drawable/ic_baseline_single_bed_24"
@@ -134,7 +134,7 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:singleLine="true"
                 android:id="@+id/tvbathroom"
-                android:text=" 3 Bedroom"
+                android:text="Bedroom"
                 android:textColor="@color/black"
                 android:textSize="@dimen/album_title" />
 
@@ -166,6 +166,7 @@
                 android:layout_marginLeft="290dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
+                android:id="@+id/img_verify"
                 android:layout_toRightOf="@+id/tvprice"
                 android:src="@drawable/ic_checkmark" />
 

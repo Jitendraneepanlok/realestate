@@ -3,6 +3,7 @@ package com.tutorial.realestate.Fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +31,15 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.tutorial.realestate.Interface.ApiClient;
+import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Model.ChangePassConstant;
+import com.tutorial.realestate.Model.ChangePasswordModel;
+import com.tutorial.realestate.Model.UpdateProfileConstantModel;
+import com.tutorial.realestate.Model.UpdateProfileModel;
+import com.tutorial.realestate.Pojo.ChangePassContantPojo;
+import com.tutorial.realestate.Pojo.UpdateProfileContant;
+import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
 import com.tutorial.realestate.Utiles.Utility;
 
@@ -41,6 +52,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -53,6 +66,8 @@ public class UpdateProfileFragment extends Fragment {
     View view;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private String userChoosenTask;
+    private ProgressDialog pDialog;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -235,6 +250,64 @@ public class UpdateProfileFragment extends Fragment {
     }
 
     private void UpdateProfileApi() {
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Please wait...");
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        SessionManager sessionManager = new SessionManager(getActivity());
+        String UID = sessionManager.getUserData(SessionManager.UID);
+
+        UpdateProfileModel updateProfileModel= new UpdateProfileModel();
+        updateProfileModel.setProfileName(FirstName);
+        updateProfileModel.setuID(UID);
+        updateProfileModel.setCityId(Postal);
+        updateProfileModel.setContactCountryCode("+91");
+        updateProfileModel.setCountryId("");
+        updateProfileModel.setProfileBusinessAddress(Address);
+        updateProfileModel.setProfileBusinessTitle(Email);
+        updateProfileModel.setProfileContact(Phoneno);
+        updateProfileModel.setProfileUseras(LastName);
+        updateProfileModel.setStateId("");
+
+
+
+        UpdateProfileConstantModel updateProfileConstantModel = new UpdateProfileConstantModel();
+        updateProfileConstantModel.setRealstate(updateProfileModel);
+
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<UpdateProfileContant> call = apiService.postUpdateProfile(updateProfileConstantModel);
+        try {
+            call.enqueue(new Callback<UpdateProfileContant>() {
+                @Override
+                public void onResponse(Call<UpdateProfileContant> call, retrofit2.Response<UpdateProfileContant> response) {
+                    if (response.isSuccessful()) {
+                        Log.e("Response", "" + response.body().toString());
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
+
+                       /* etoldpass.setText("");
+                        etnewpass.setText("");*/
+
+                        pDialog.dismiss();
+                    } else {
+                        Toast.makeText(getActivity(), response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
+                        pDialog.cancel();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<UpdateProfileContant> call, Throwable t) {
+                    // Log error here since request failed
+                    Toast.makeText(getActivity(), "" + t, Toast.LENGTH_SHORT).show();
+                    Log.e("Failer", "" + t);
+                    pDialog.dismiss();
+                }
+            });
+        } catch (Exception ex) {
+            Log.e("LoginFailer", "" + ex);
+            Toast.makeText(getActivity(), "" + ex, Toast.LENGTH_SHORT).show();
+            pDialog.dismiss();
+        }
     }
 
 

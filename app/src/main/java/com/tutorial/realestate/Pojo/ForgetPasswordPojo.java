@@ -1,20 +1,19 @@
 package com.tutorial.realestate.Pojo;
-
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+public class ForgetPasswordPojo {
 
     @SerializedName("realstate")
     @Expose
-    private Realstate realstate;
+    private ForgetPasswordResponse realstate;
 
-    public Realstate getRealstate() {
+    public ForgetPasswordResponse getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(Realstate realstate) {
+    public void setRealstate(ForgetPasswordResponse realstate) {
         this.realstate = realstate;
     }
+
 }

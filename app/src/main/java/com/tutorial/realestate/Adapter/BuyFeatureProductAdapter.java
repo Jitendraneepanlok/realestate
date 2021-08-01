@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.tutorial.realestate.Helper.Album;
+import com.tutorial.realestate.Pojo.FeaturePropertiesContantPojo;
+import com.tutorial.realestate.Pojo.FeaturedPropertyPojo;
+import com.tutorial.realestate.Pojo.FeaturedPropertyResponse;
 import com.tutorial.realestate.R;
 
 import java.util.List;
@@ -18,24 +21,30 @@ import java.util.List;
 public class BuyFeatureProductAdapter extends RecyclerView.Adapter<BuyFeatureProductAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Album> albumList;
+    /*private List<Album> albumList;*/
+    private FeaturePropertiesContantPojo featuredPropertyResponse;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_title, count;
-        public ImageView image, overflow;
+        public TextView tv_title, count,tvlocation,tv_sqft,tvbathroom,tvprice;
+        public ImageView image, img_verify;
 
         public MyViewHolder(View view) {
             super(view);
             tv_title = (TextView) view.findViewById(R.id.tv_title);
             count = (TextView) view.findViewById(R.id.count);
             image = (ImageView) view.findViewById(R.id.image);
+            tvlocation = (TextView)view.findViewById(R.id.tvlocation);
+            tv_sqft = (TextView)view.findViewById(R.id.tv_sqft);
+            tvbathroom = (TextView)view.findViewById(R.id.tvbathroom);
+            tvprice = (TextView)view.findViewById(R.id.tvprice);
+            img_verify = (ImageView)view.findViewById(R.id.img_verify);
         }
     }
 
 
-    public BuyFeatureProductAdapter(Context mContext, List<Album> albumList) {
+    public BuyFeatureProductAdapter(Context mContext, FeaturePropertiesContantPojo featuredPropertyResponse) {
         this.mContext = mContext;
-        this.albumList = albumList;
+        this.featuredPropertyResponse = featuredPropertyResponse;
     }
 
     @Override
@@ -47,16 +56,22 @@ public class BuyFeatureProductAdapter extends RecyclerView.Adapter<BuyFeaturePro
 
     @Override
     public void onBindViewHolder(final BuyFeatureProductAdapter.MyViewHolder holder, int position) {
-        Album album = albumList.get(position);
-        holder.tv_title.setText(album.getName());
-//        holder.count.setText(album.getNumOfSongs() + " songs");
-        // loading album cover using Glide library
-        Glide.with(mContext).load(album.getThumbnail()).into(holder.image);
+        FeaturedPropertyPojo featuredPropertyPojo = featuredPropertyResponse.getRealstate().getFeaturedProperties().get(position);
+
+        holder.tv_title.setText(featuredPropertyPojo.getTxtpropertyTitle());
+        holder.tvlocation.setText(featuredPropertyPojo.getTxtLocalityName()+","+featuredPropertyPojo.getTxtCityName()+","+featuredPropertyPojo.getTxtStateName());
+        Glide.with(mContext).load(featuredPropertyPojo.getTxtImage()).into(holder.image);
+        holder.tv_sqft.setText(featuredPropertyPojo.getTxtArea());
+//        holder.tvbathroom.setText(featuredPropertyPojo.getTxtBedrooms()+"Bedroom");
+        holder.tvprice.setText(" Start From / Rs. "+featuredPropertyPojo.getTxtsaleExpectedPrice());
+        Glide.with(mContext).load(featuredPropertyPojo.getTxtIsVerified()).into(holder.img_verify);
+
+
 
     }
 
     @Override
     public int getItemCount() {
-        return albumList.size();
+        return featuredPropertyResponse.getRealstate().getFeaturedProperties().size();
     }
 }

@@ -17,7 +17,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,13 +25,14 @@ import android.widget.Toast;
 
 import com.tutorial.realestate.Interface.ApiClient;
 import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Model.ForgetPasswordConstant;
 import com.tutorial.realestate.Model.ForgetPasswordModel;
+import com.tutorial.realestate.Model.LoginData;
 import com.tutorial.realestate.Model.LoginModel;
-import com.tutorial.realestate.Model.RegistrationModel;
 import com.tutorial.realestate.NavigationActivity.HomeActivity;
+import com.tutorial.realestate.Pojo.ForgetPasswordPojo;
 import com.tutorial.realestate.Pojo.ForgetPasswordResponse;
-import com.tutorial.realestate.Pojo.LoginResponseMsg;
-import com.tutorial.realestate.Pojo.RegistrationResponse;
+import com.tutorial.realestate.Pojo.LoginResponse;
 import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
 
@@ -83,8 +83,8 @@ public class LoginActivity extends AppCompatActivity {
         lllogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Validation();
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                Validation();
+              //  startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
         tv_register = (TextView)findViewById(R.id.tv_register);
@@ -143,35 +143,42 @@ public class LoginActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
+        LoginData loginData = new LoginData();
+        loginData.setRegEmail(et_uname);
+        loginData.setRegUserPassword(et_psss);
+
         LoginModel loginModel = new LoginModel();
-        loginModel.setEmail(et_uname);
-        loginModel.setPassword(et_psss);
+        loginModel.setRealstate(loginData);
+
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<LoginResponseMsg> call = apiService.postSignIn("application/json", loginModel);
+        Call<LoginResponse> call = apiService.postSignIn(loginModel);
         try {
-            call.enqueue(new Callback<LoginResponseMsg>() {
+            call.enqueue(new Callback<LoginResponse>() {
                 @Override
-                public void onResponse(Call<LoginResponseMsg> call, retrofit2.Response<LoginResponseMsg> response) {
+                public void onResponse(Call<LoginResponse> call, retrofit2.Response<LoginResponse> response) {
                     if (response.isSuccessful()) {
                         Log.e("Login_Response", "" + response.body().toString());
-                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
 
                         SessionManager sessionManager = new SessionManager(LoginActivity.this);
-                        sessionManager.setValue(SessionManager.USER_NAME, response.body().getData().getEmail());
+                        sessionManager.setValue(SessionManager.USER_NAME, response.body().getRealstate().getData().getEmail());
+                        sessionManager.setValue(SessionManager.UID, response.body().getRealstate().getData().getId());
+                        sessionManager.setValue(SessionManager.JWT_TOKEN, response.body().getRealstate().getData().getJwtTocken());
+                        sessionManager.setValue(SessionManager.NAME, response.body().getRealstate().getData().getName());
 
                         finish();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
                         pDialog.dismiss();
                     } else {
-                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
                         pDialog.cancel();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<LoginResponseMsg> call, Throwable t) {
+                public void onFailure(Call<LoginResponse> call, Throwable t) {
                     // Log error here since request failed
                     Toast.makeText(LoginActivity.this, "" + t, Toast.LENGTH_SHORT).show();
                     Log.e("Failer", "" + t);
@@ -239,29 +246,30 @@ public class LoginActivity extends AppCompatActivity {
         pDialog.show();
 
         ForgetPasswordModel forgetPasswordModel= new ForgetPasswordModel();
-        forgetPasswordModel.setEmail(forgetmail);
+        forgetPasswordModel.setRegEmail(forgetmail);
 
-
+        ForgetPasswordConstant forgetPasswordConstant = new ForgetPasswordConstant();
+        forgetPasswordConstant.setRealstate(forgetPasswordModel);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<ForgetPasswordResponse> call = apiService.forgetpass("application/json", forgetPasswordModel);
+        Call<ForgetPasswordPojo> call = apiService.forgetpass(forgetPasswordConstant);
         try {
-            call.enqueue(new Callback<ForgetPasswordResponse>() {
+            call.enqueue(new Callback<ForgetPasswordPojo>() {
                 @Override
-                public void onResponse(Call<ForgetPasswordResponse> call, retrofit2.Response<ForgetPasswordResponse> response) {
+                public void onResponse(Call<ForgetPasswordPojo> call, retrofit2.Response<ForgetPasswordPojo> response) {
                     if (response.isSuccessful()) {
                         Log.e("Response", "" + response.body().toString());
-                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
 
                         pDialog.dismiss();
                     } else {
-                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
                         pDialog.cancel();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ForgetPasswordResponse> call, Throwable t) {
+                public void onFailure(Call<ForgetPasswordPojo> call, Throwable t) {
                     // Log error here since request failed
                     Toast.makeText(LoginActivity.this, "" + t, Toast.LENGTH_SHORT).show();
                     Log.e("Failer", "" + t);

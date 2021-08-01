@@ -1,18 +1,19 @@
 package com.tutorial.realestate.Model;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginModel {
+public class ForgetPasswordConstant {
+
     @SerializedName("realstate")
     @Expose
-    private LoginData realstate;
+    private ForgetPasswordModel realstate;
 
-    public LoginData getRealstate() {
+    public ForgetPasswordModel getRealstate() {
         return realstate;
     }
 
-    public void setRealstate(LoginData realstate) {
+    public void setRealstate(ForgetPasswordModel realstate) {
         this.realstate = realstate;
     }
+
 }

@@ -27,7 +27,8 @@
     <string name="buy">Buy</string>
     <string name="rent">Rent</string>
     <string name="agent">Agent</string>
-    <string name="feature">Featured Properties</string> n
+    <string name="feature">Featured Properties</string>
+    n
     <string name="contact">Contact Us</string>
     <string name="name">Name*</string>
     <string name="email">Email*</string>
@@ -75,6 +76,12 @@
     <string name="nearbylocation">Near By</string>
     <string name="breif">POSH 3BHK APARTMENT AT VERY PRIME LOCATION.BBCL Ananya FIVE FURLONG ROAD GUINDY CHENNAI, Velachery, Chennai - South, Tamil Nadu. Lift, Reserved Parking, Security</string>
     <string name="other">Others</string>
+    <string name="Something_worng">Something went worng</string>
+    <string name="Otp_screen_description">Create an account to find the best Property for you.</string>
+    <string name="verify_text">Verify your mobile number: </string>
+    <string name="dummy_no">+91-1234567890</string>
+    <string name="otp_hint">Enter otp recieved on your mobile</string>
+    <string name="button_text_otp">VERIFY OTP</string>
 
 
 </resources>

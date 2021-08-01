@@ -23,7 +23,9 @@ import android.widget.Toast;
 import com.hbb20.CountryCodePicker;
 import com.tutorial.realestate.Interface.ApiClient;
 import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Model.RegistrationConsModel;
 import com.tutorial.realestate.Model.RegistrationModel;
+import com.tutorial.realestate.Pojo.RegistrationPojoConstant;
 import com.tutorial.realestate.Pojo.RegistrationResponse;
 import com.tutorial.realestate.R;
 
@@ -41,8 +43,9 @@ public class RegisterActivity extends AppCompatActivity {
     String url = "https://realestate.10to100.com/terms-conditions";
     private ProgressDialog pDialog;
     LinearLayout btn_register;
-    EditText etfullname,etemail_id,etpassword,etphone;
+    EditText etfullname, etemail_id, etpassword, etphone;
     String FullName, password, Email, Phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,12 +77,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void initView() {
 
-        etfullname = (EditText)findViewById(R.id.etfullname);
-        etemail_id = (EditText)findViewById(R.id.etemail_id);
-        etpassword = (EditText)findViewById(R.id.etpassword);
-        etphone = (EditText)findViewById(R.id.etphone);
+        etfullname = (EditText) findViewById(R.id.etfullname);
+        etemail_id = (EditText) findViewById(R.id.etemail_id);
+        etpassword = (EditText) findViewById(R.id.etpassword);
+        etphone = (EditText) findViewById(R.id.etphone);
 
-        btn_register = (LinearLayout)findViewById(R.id.btn_register);
+        btn_register = (LinearLayout) findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         ccp = (CountryCodePicker) findViewById(R.id.ccp);
-        cb_terms = (CheckBox)findViewById(R.id.cb_terms);
+      /*  cb_terms = (CheckBox)findViewById(R.id.cb_terms);
         cb_terms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -98,10 +101,11 @@ public class RegisterActivity extends AppCompatActivity {
                     i.setData(Uri.parse(url));
                     startActivity(i);
                 }else {
+                    Toast.makeText(RegisterActivity.this, R.string.Something_worng, Toast.LENGTH_SHORT).show();
 
                 }
             }
-        });
+        });*/
     }
 
     private void checkvalidation() {
@@ -110,28 +114,28 @@ public class RegisterActivity extends AppCompatActivity {
         etpassword = (EditText) findViewById(R.id.etpassword);
         etphone = (EditText) findViewById(R.id.etphone);
 
-         FullName = etfullname.getText().toString().trim();
-         password = etpassword.getText().toString().trim();
-         Email = etemail_id.getText().toString().trim();
+        FullName = etfullname.getText().toString().trim();
+        password = etpassword.getText().toString().trim();
+        Email = etemail_id.getText().toString().trim();
         String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-         Phone = etphone.getText().toString().trim();
+        Phone = etphone.getText().toString().trim();
 
-        if (!FullName.equals("")){
-            if (!Email.equals("")/*matches(emailpattern)*/){
-                if (!password.equals("")){
-                    if (!Phone.equals("")/*isValidPhone(Phone)*/){
+        if (!FullName.equals("")) {
+            if (!Email.equals("")/*matches(emailpattern)*/) {
+                if (!password.equals("")) {
+                    if (!Phone.equals("")/*isValidPhone(Phone)*/) {
                         signUpApi();
-                    }else {
+                    } else {
                         etphone.setError("Please Enter Mobile No.");
                     }
-                }else {
+                } else {
                     etpassword.setError("Please Enter Password");
                 }
 
-            }else {
+            } else {
                 etemail_id.setError("Please Enter Email-Id");
             }
-        }else {
+        } else {
             etfullname.setError("Please Enter your full name");
         }
     }
@@ -157,37 +161,47 @@ public class RegisterActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.show();
 
-        RegistrationModel registrationModel= new RegistrationModel();
-        registrationModel.setFirstName(FullName);
-        registrationModel.setContact(Phone);
-        registrationModel.setEmail(Email);
-        registrationModel.setPassword(password);
+        RegistrationModel registrationModel = new RegistrationModel();
+        registrationModel.setRegUserName(FullName);
+        registrationModel.setContactNumber(Phone);
+        registrationModel.setRegEmail(Email);
+        registrationModel.setRegUserPassword(password);
+        registrationModel.setCountryCode("+91");
+        registrationModel.setUserType("Individual");
 
+        RegistrationConsModel registrationConsModel = new RegistrationConsModel();
+        registrationConsModel.setRealstate(registrationModel);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<RegistrationResponse> call = apiService.postSignUp("application/json", registrationModel);
+        Call<RegistrationPojoConstant> call = apiService.postSignUp(registrationConsModel);
         try {
-            call.enqueue(new Callback<RegistrationResponse>() {
+            call.enqueue(new Callback<RegistrationPojoConstant>() {
                 @Override
-                public void onResponse(Call<RegistrationResponse> call, retrofit2.Response<RegistrationResponse> response) {
+                public void onResponse(Call<RegistrationPojoConstant> call, retrofit2.Response<RegistrationPojoConstant> response) {
                     if (response.isSuccessful()) {
                         Log.e("Response", "" + response.body().toString());
-                        Toast.makeText(RegisterActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
 
-                        etfullname.setText("");
-                        etemail_id.setText("");
-                        etpassword.setText("");
-                        etphone.setText("");
+                        String Mobile = response.body().getRealstate().getMobile();
+                        String Mobile_Otp = response.body().getRealstate().getMobileOtp();
+                        String UID = response.body().getRealstate().getUserId();
+
+                        Intent intent = new Intent(getApplicationContext(), VerifyMobileActivity.class);
+                        intent.putExtra("MOBILE_NUMBER", Mobile);
+                        intent.putExtra("MOBILE_OTP", Mobile_Otp);
+                        intent.putExtra("USER_ID", UID);
+                        startActivity(intent);
+
 
                         pDialog.dismiss();
                     } else {
-                        Toast.makeText(RegisterActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
                         pDialog.cancel();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<RegistrationResponse> call, Throwable t) {
+                public void onFailure(Call<RegistrationPojoConstant> call, Throwable t) {
                     // Log error here since request failed
                     Toast.makeText(RegisterActivity.this, "" + t, Toast.LENGTH_SHORT).show();
                     Log.e("Failer", "" + t);

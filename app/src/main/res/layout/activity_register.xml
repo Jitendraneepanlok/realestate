@@ -14,7 +14,6 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -132,6 +131,27 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/_5sdp"
+                android:gravity="center">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms"
+                    android:fontFamily="@font/arialmt"
+                    android:id="@+id/cb_terms"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,28 +185,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_gravity="center"
-                android:paddingLeft="@dimen/_5sdp"
-                android:gravity="center">
-
-                <CheckBox
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/terms"
-                    android:fontFamily="@font/arialmt"
-                    android:id="@+id/cb_terms"
-                    android:textColor="@color/black"
-                    android:singleLine="true"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/_12sdp" />
-
-
-            </LinearLayout>
 
 
 
