@@ -127,7 +127,7 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:id="@+id/tvbathroom"
-                android:text=" 3 Bathrooms"
+                android:text=" Bathrooms"
                 android:textColor="@color/black"
                 android:textSize="@dimen/album_title" />
 

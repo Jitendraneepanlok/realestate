@@ -36,22 +36,22 @@ public class FeaturedPropertyPojo {
     private String txtArea;
     @SerializedName("txtBedrooms")
     @Expose
-    private Integer txtBedrooms;
+    private String txtBedrooms;
     @SerializedName("txtAvailability")
     @Expose
-    private Integer txtAvailability;
+    private String txtAvailability;
     @SerializedName("txtLengthOfPlot")
     @Expose
-    private Integer txtLengthOfPlot;
+    private String txtLengthOfPlot;
     @SerializedName("txtBreadthOfPlot")
     @Expose
-    private Integer txtBreadthOfPlot;
+    private String txtBreadthOfPlot;
     @SerializedName("txtIsVerified")
     @Expose
     private String txtIsVerified;
     @SerializedName("txtrentExpectedPrice")
     @Expose
-    private Integer txtrentExpectedPrice;
+    private String txtrentExpectedPrice;
     @SerializedName("txtsaleExpectedPrice")
     @Expose
     private String txtsaleExpectedPrice;
@@ -136,35 +136,35 @@ public class FeaturedPropertyPojo {
         this.txtArea = txtArea;
     }
 
-    public Integer getTxtBedrooms() {
+    public String getTxtBedrooms() {
         return txtBedrooms;
     }
 
-    public void setTxtBedrooms(Integer txtBedrooms) {
+    public void setTxtBedrooms(String txtBedrooms) {
         this.txtBedrooms = txtBedrooms;
     }
 
-    public Integer getTxtAvailability() {
+    public String getTxtAvailability() {
         return txtAvailability;
     }
 
-    public void setTxtAvailability(Integer txtAvailability) {
+    public void setTxtAvailability(String txtAvailability) {
         this.txtAvailability = txtAvailability;
     }
 
-    public Integer getTxtLengthOfPlot() {
+    public String getTxtLengthOfPlot() {
         return txtLengthOfPlot;
     }
 
-    public void setTxtLengthOfPlot(Integer txtLengthOfPlot) {
+    public void setTxtLengthOfPlot(String txtLengthOfPlot) {
         this.txtLengthOfPlot = txtLengthOfPlot;
     }
 
-    public Integer getTxtBreadthOfPlot() {
+    public String getTxtBreadthOfPlot() {
         return txtBreadthOfPlot;
     }
 
-    public void setTxtBreadthOfPlot(Integer txtBreadthOfPlot) {
+    public void setTxtBreadthOfPlot(String txtBreadthOfPlot) {
         this.txtBreadthOfPlot = txtBreadthOfPlot;
     }
 
@@ -176,11 +176,11 @@ public class FeaturedPropertyPojo {
         this.txtIsVerified = txtIsVerified;
     }
 
-    public Integer getTxtrentExpectedPrice() {
+    public String getTxtrentExpectedPrice() {
         return txtrentExpectedPrice;
     }
 
-    public void setTxtrentExpectedPrice(Integer txtrentExpectedPrice) {
+    public void setTxtrentExpectedPrice(String txtrentExpectedPrice) {
         this.txtrentExpectedPrice = txtrentExpectedPrice;
     }
 

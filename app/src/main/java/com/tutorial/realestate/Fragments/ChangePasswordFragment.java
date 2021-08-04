@@ -15,20 +15,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.tutorial.realestate.Activity.LoginActivity;
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.ChangePassConstant;
 import com.tutorial.realestate.Model.ChangePasswordModel;
-import com.tutorial.realestate.Model.ForgetPasswordModel;
 import com.tutorial.realestate.NavigationActivity.HomeActivity;
 import com.tutorial.realestate.Pojo.ChangePassContantPojo;
-import com.tutorial.realestate.Pojo.ChangePassResponse;
-import com.tutorial.realestate.Pojo.ForgetPasswordResponse;
 import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
 

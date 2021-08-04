@@ -2,6 +2,7 @@ package com.tutorial.realestate.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -10,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -17,21 +19,22 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.ForgetPasswordConstant;
 import com.tutorial.realestate.Model.ForgetPasswordModel;
 import com.tutorial.realestate.Model.LoginData;
 import com.tutorial.realestate.Model.LoginModel;
 import com.tutorial.realestate.NavigationActivity.HomeActivity;
 import com.tutorial.realestate.Pojo.ForgetPasswordPojo;
-import com.tutorial.realestate.Pojo.ForgetPasswordResponse;
 import com.tutorial.realestate.Pojo.LoginResponse;
 import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
@@ -46,11 +49,18 @@ public class LoginActivity extends AppCompatActivity {
     EditText  txtEmailAddress,txtPassword;
     String et_uname,et_psss,forgetmail;
     private ProgressDialog pDialog;
-
+    Boolean ischecked = false;
+    CheckBox cb_remember;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.title_bar_color));
+        }
         initView();
         if (isNetworkStatusAvialable(getApplicationContext())) {
             Toast.makeText(getApplicationContext(), "Internet Available", Toast.LENGTH_SHORT).show();
@@ -85,6 +95,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Validation();
               //  startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+            }
+        });
+        cb_remember = (CheckBox) findViewById(R.id.cb_remember);
+        cb_remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ischecked = isChecked;
+
             }
         });
         tv_register = (TextView)findViewById(R.id.tv_register);
@@ -166,6 +184,7 @@ public class LoginActivity extends AppCompatActivity {
                         sessionManager.setValue(SessionManager.UID, response.body().getRealstate().getData().getId());
                         sessionManager.setValue(SessionManager.JWT_TOKEN, response.body().getRealstate().getData().getJwtTocken());
                         sessionManager.setValue(SessionManager.NAME, response.body().getRealstate().getData().getName());
+                        sessionManager.setValueBoolean(SessionManager.VALUE, ischecked);
 
                         finish();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);

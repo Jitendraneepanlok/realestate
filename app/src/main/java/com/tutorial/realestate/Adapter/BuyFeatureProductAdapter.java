@@ -1,6 +1,8 @@
 package com.tutorial.realestate.Adapter;
 
 import android.content.Context;
+import android.graphics.drawable.PictureDrawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,22 +12,28 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.model.StreamEncoder;
+import com.caverock.androidsvg.SVG;
 import com.tutorial.realestate.Helper.Album;
+import com.tutorial.realestate.Helper.SvgSoftwareLayerSetter;
 import com.tutorial.realestate.Pojo.FeaturePropertiesContantPojo;
 import com.tutorial.realestate.Pojo.FeaturedPropertyPojo;
 import com.tutorial.realestate.Pojo.FeaturedPropertyResponse;
 import com.tutorial.realestate.R;
 
+import java.io.InputStream;
 import java.util.List;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class BuyFeatureProductAdapter extends RecyclerView.Adapter<BuyFeatureProductAdapter.MyViewHolder> {
 
     private Context mContext;
-    /*private List<Album> albumList;*/
     private FeaturePropertiesContantPojo featuredPropertyResponse;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_title, count,tvlocation,tv_sqft,tvbathroom,tvprice;
+        public TextView tv_title, count, tvlocation, tv_sqft, tvbathroom, tvprice;
         public ImageView image, img_verify;
 
         public MyViewHolder(View view) {
@@ -33,11 +41,11 @@ public class BuyFeatureProductAdapter extends RecyclerView.Adapter<BuyFeaturePro
             tv_title = (TextView) view.findViewById(R.id.tv_title);
             count = (TextView) view.findViewById(R.id.count);
             image = (ImageView) view.findViewById(R.id.image);
-            tvlocation = (TextView)view.findViewById(R.id.tvlocation);
-            tv_sqft = (TextView)view.findViewById(R.id.tv_sqft);
-            tvbathroom = (TextView)view.findViewById(R.id.tvbathroom);
-            tvprice = (TextView)view.findViewById(R.id.tvprice);
-            img_verify = (ImageView)view.findViewById(R.id.img_verify);
+            tvlocation = (TextView) view.findViewById(R.id.tvlocation);
+            tv_sqft = (TextView) view.findViewById(R.id.tv_sqft);
+            tvbathroom = (TextView) view.findViewById(R.id.tvbathroom);
+            tvprice = (TextView) view.findViewById(R.id.tvprice);
+            img_verify = (ImageView) view.findViewById(R.id.img_verify);
         }
     }
 
@@ -58,16 +66,20 @@ public class BuyFeatureProductAdapter extends RecyclerView.Adapter<BuyFeaturePro
     public void onBindViewHolder(final BuyFeatureProductAdapter.MyViewHolder holder, int position) {
         FeaturedPropertyPojo featuredPropertyPojo = featuredPropertyResponse.getRealstate().getFeaturedProperties().get(position);
 
-        holder.tv_title.setText(featuredPropertyPojo.getTxtpropertyTitle());
-        holder.tvlocation.setText(featuredPropertyPojo.getTxtLocalityName()+","+featuredPropertyPojo.getTxtCityName()+","+featuredPropertyPojo.getTxtStateName());
-        Glide.with(mContext).load(featuredPropertyPojo.getTxtImage()).into(holder.image);
-        holder.tv_sqft.setText(featuredPropertyPojo.getTxtArea());
-//        holder.tvbathroom.setText(featuredPropertyPojo.getTxtBedrooms()+"Bedroom");
-        holder.tvprice.setText(" Start From / Rs. "+featuredPropertyPojo.getTxtsaleExpectedPrice());
-        Glide.with(mContext).load(featuredPropertyPojo.getTxtIsVerified()).into(holder.img_verify);
+        holder.tv_title.setText(" " + featuredPropertyPojo.getTxtpropertyTitle());
+        holder.tvlocation.setText(" " + featuredPropertyPojo.getTxtLocalityName() + "," + featuredPropertyPojo.getTxtCityName() + "," + featuredPropertyPojo.getTxtStateName());
+        holder.tv_sqft.setText(" " + featuredPropertyPojo.getTxtArea());
+        holder.tvbathroom.setText("" + featuredPropertyPojo.getTxtBedrooms() + " Bedroom");
+        holder.tvprice.setText(" Start From / Rs. " + featuredPropertyPojo.getTxtsaleExpectedPrice());
 
+        Glide.with(mContext).
+                load(featuredPropertyPojo.getTxtImage())
+                .error(R.drawable.login_1)
+                .into(holder.image);
 
-
+        Glide.with(mContext).load(featuredPropertyPojo.getTxtIsVerified())
+                .error(R.drawable.ic_checkmark)
+                .into(holder.img_verify);
     }
 
     @Override

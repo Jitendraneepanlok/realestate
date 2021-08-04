@@ -34,11 +34,6 @@
             app:exitAnim="@anim/nav_default_exit_anim" />
 
         <action
-            android:id="@+id/action_popularSearchFragment_to_postPropertyFragment"
-            app:destination="@id/nav_post_property"
-            app:exitAnim="@anim/nav_default_exit_anim" />
-
-        <action
             android:id="@+id/action_popularSearchFragment_to_commercialFragment"
             app:destination="@id/nav_post_commercial"
             app:exitAnim="@anim/nav_default_exit_anim" />
@@ -61,13 +56,6 @@
         android:name="com.tutorial.realestate.Fragments.CommercialDetails"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_commercial_details"/>
-
-    <fragment
-        android:id="@+id/nav_post_property"
-        android:name="com.tutorial.realestate.NavigationActivity.ui.postproperty.PostPropertyFragment"
-        android:label="@string/post_properties"
-        tools:layout="@layout/fragment_post_properties" />
-
 
 
     <fragment

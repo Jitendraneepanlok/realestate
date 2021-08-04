@@ -7,14 +7,10 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,13 +27,10 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
-import com.tutorial.realestate.Model.ChangePassConstant;
-import com.tutorial.realestate.Model.ChangePasswordModel;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.UpdateProfileConstantModel;
 import com.tutorial.realestate.Model.UpdateProfileModel;
-import com.tutorial.realestate.Pojo.ChangePassContantPojo;
 import com.tutorial.realestate.Pojo.UpdateProfileContant;
 import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
@@ -48,14 +41,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
-
-import static android.app.Activity.RESULT_OK;
 
 public class UpdateProfileFragment extends Fragment {
     private NavController navController;

@@ -11,8 +11,7 @@ public class SessionManager {
     static public String UID = "id";
     static public String JWT_TOKEN = "token";
     static public String NAME = "name";
-
-
+    static public String VALUE = "value";
 
     public SessionManager(Context context) {
         this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -36,6 +35,16 @@ public class SessionManager {
 
     public String getUserData(String key) {
         return sharedPreferences.getString(key, "");
+    }
+
+    public void setValueBoolean(String key , Boolean value){
+        sharedPreferences.edit().putBoolean(key, value).apply();
+
+    }
+
+    public boolean getValueBoolean(String key){
+        return sharedPreferences.getBoolean(key,false);
+
     }
 
     public void logout() {

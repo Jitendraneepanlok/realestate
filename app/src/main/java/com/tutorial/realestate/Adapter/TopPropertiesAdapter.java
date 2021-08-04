@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.tutorial.realestate.Helper.Album;
+import com.tutorial.realestate.Pojo.TopPropertiesConstantPojo;
+import com.tutorial.realestate.Pojo.TopProperty;
 import com.tutorial.realestate.R;
 
 import java.util.List;
@@ -18,24 +20,30 @@ import java.util.List;
 public class TopPropertiesAdapter extends RecyclerView.Adapter<TopPropertiesAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Album> albumList;
+    private TopPropertiesConstantPojo topPropertiesConstantPojo;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv_title, count;
-        public ImageView image, overflow;
+        public TextView tv_title, tvlocation,tv_bhk,tv_area,tv_price,tv_project,tvprice;
+        public ImageView image, img_check;
 
         public MyViewHolder(View view) {
             super(view);
             tv_title = (TextView) view.findViewById(R.id.tv_title);
-            count = (TextView) view.findViewById(R.id.count);
+            tvlocation = (TextView) view.findViewById(R.id.tvlocation);
+            tv_bhk = (TextView)view.findViewById(R.id.tv_bhk);
+            tv_area = (TextView)view.findViewById(R.id.tv_area);
+            tv_price = (TextView)view.findViewById(R.id.tv_price);
+            tvprice = (TextView)view.findViewById(R.id.tvprice);
+            tv_project = (TextView)view.findViewById(R.id.tv_project);
             image = (ImageView) view.findViewById(R.id.image);
+            img_check = (ImageView)view.findViewById(R.id.img_check);
         }
     }
 
 
-    public TopPropertiesAdapter(Context mContext, List<Album> albumList) {
+    public TopPropertiesAdapter(Context mContext, TopPropertiesConstantPojo topPropertiesConstantPojo) {
         this.mContext = mContext;
-        this.albumList = albumList;
+        this.topPropertiesConstantPojo = topPropertiesConstantPojo;
     }
 
     @Override
@@ -47,16 +55,21 @@ public class TopPropertiesAdapter extends RecyclerView.Adapter<TopPropertiesAdap
 
     @Override
     public void onBindViewHolder(final TopPropertiesAdapter.MyViewHolder holder, int position) {
-        Album album = albumList.get(position);
-        holder.tv_title.setText(album.getName());
-//        holder.count.setText(album.getNumOfSongs() + " songs");
-        // loading album cover using Glide library
-        Glide.with(mContext).load(album.getThumbnail()).into(holder.image);
+        TopProperty topProperty = topPropertiesConstantPojo.getRealstate().getTopProperties().get(position);
+        holder.tv_title.setText(" "+topProperty.getTxtbuilderName());
+        holder.tvlocation.setText(" "+topProperty.getTxtLocalityName()+","+topProperty.getTxtsublocality()+","+topProperty.getTxtStateName());
+        holder.tv_bhk.setText(" "+topProperty.getTxtBHK());
+        holder.tv_area.setText(" "+topProperty.getTxtArea());
+        holder.tv_price.setText(" "+topProperty.getTxtPrice());
+        holder.tv_project.setText(" "+topProperty.getTxtProjectStatus());
+        holder.tvprice.setText(" "+topProperty.getTxtPricefrom()+"/month");
+        Glide.with(mContext).load(topProperty.getTxtImage()).into(holder.image);
+        Glide.with(mContext).load(topProperty.getTxtIsVerified()).into(holder.img_check);
 
     }
 
     @Override
     public int getItemCount() {
-        return albumList.size();
+        return topPropertiesConstantPojo.getRealstate().getTopProperties().size();
     }
 }

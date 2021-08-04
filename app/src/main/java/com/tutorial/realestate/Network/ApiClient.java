@@ -1,4 +1,4 @@
-package com.tutorial.realestate.Interface;
+package com.tutorial.realestate.Network;
 
 
 import com.google.gson.Gson;
@@ -31,6 +31,8 @@ public class ApiClient {
 
         Gson gson = new GsonBuilder()
                 .setLenient()
+                /*.registerTypeAdapter(int.class, new IntTypeAdapter())
+                .registerTypeAdapter(Integer.class, new IntTypeAdapter())*/
                 .create();
 
         retrofit = new Retrofit.Builder()

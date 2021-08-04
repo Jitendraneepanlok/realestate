@@ -6,31 +6,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tutorial.realestate.Activity.VerifyMobileActivity;
-import com.tutorial.realestate.Adapter.BuyAdapter;
 import com.tutorial.realestate.Adapter.BuyFeatureProductAdapter;
-import com.tutorial.realestate.Helper.Album;
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.FeaturePropertiesContsantModel;
 import com.tutorial.realestate.Model.FeaturePropertiesModel;
-import com.tutorial.realestate.Model.MobileVerifyConstant;
-import com.tutorial.realestate.Model.MobileVerifyModel;
 import com.tutorial.realestate.Pojo.FeaturePropertiesContantPojo;
 import com.tutorial.realestate.Pojo.FeaturedPropertyPojo;
-import com.tutorial.realestate.Pojo.MobileVerifyContantPojo;
 import com.tutorial.realestate.R;
 
 import java.util.ArrayList;
@@ -68,67 +59,14 @@ public class GalleryFragment extends Fragment {
         featproduct_recyler = (RecyclerView)root.findViewById(R.id.featproduct_recyler);
 
         featuredPropertyList = new ArrayList<>();
-       // adapter = new BuyFeatureProductAdapter(getActivity(), albumList);
 
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         featproduct_recyler.setLayoutManager(verticalLayoutManager);
 
         featproduct_recyler.setItemAnimator(new DefaultItemAnimator());
-//        featproduct_recyler.setAdapter(adapter);
 
-/*
-        prepareAlbums();
-*/
     }
 
-/*
-    private void prepareAlbums() {
-        int[] covers = new int[]{
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1,
-                R.drawable.login_1};
-
-        Album a = new Album("3BHK Apartment for Sale in Velachery" , 13, covers[0]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 8, covers[1]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 11, covers[2]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 12, covers[3]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 14, covers[4]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 1, covers[5]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 11, covers[6]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 14, covers[7]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 11, covers[8]);
-        albumList.add(a);
-
-        a = new Album("3BHK Apartment for Sale in Velachery", 17, covers[9]);
-        albumList.add(a);
-
-        adapter.notifyDataSetChanged();
-    }
-*/
 
     private void FeaturedPropertyCallApi() {
         pDialog = new ProgressDialog(getActivity());

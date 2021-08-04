@@ -28,7 +28,6 @@
     <string name="rent">Rent</string>
     <string name="agent">Agent</string>
     <string name="feature">Featured Properties</string>
-    n
     <string name="contact">Contact Us</string>
     <string name="name">Name*</string>
     <string name="email">Email*</string>
@@ -82,6 +81,18 @@
     <string name="dummy_no">+91-1234567890</string>
     <string name="otp_hint">Enter otp recieved on your mobile</string>
     <string name="button_text_otp">VERIFY OTP</string>
+    <string name="post_1">Sell or Rent</string>
+    <string name="post_2">your property</string>
+    <string name="post_3">We have over 15 Lac buyers and tenants for you!</string>
+    <string name="post_4">You are posting this property for</string>
+    <string name="post_5">\u20B9</string>
+    <string name="post_6">FREE !</string>
+    <string name="post_7">Free Professional Photoshoot</string>
+    <string name="post_8">Get Contact Details of upto 5 Responses</string>
+    <string name="post_9"><![CDATA[Access to 15 Lac Buyers & Tenants]]></string>
+    <string name="pos_10">Get 10X more Responses by just</string>
+    <string name="btn_continue">Continue</string>
+    <string name="pos_11"><![CDATA[Applicable only for property owner & not Agent.]]></string>
 
 
 </resources>

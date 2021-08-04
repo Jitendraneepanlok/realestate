@@ -2,6 +2,7 @@ package com.tutorial.realestate.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,24 +10,23 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.hbb20.CountryCodePicker;
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.RegistrationConsModel;
 import com.tutorial.realestate.Model.RegistrationModel;
 import com.tutorial.realestate.Pojo.RegistrationPojoConstant;
-import com.tutorial.realestate.Pojo.RegistrationResponse;
 import com.tutorial.realestate.R;
 
 import java.util.Locale;
@@ -50,6 +50,12 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.title_bar_color));
+        }
         initView();
         if (isNetworkStatusAvialable(getApplicationContext())) {
             Toast.makeText(getApplicationContext(), "Internet Available", Toast.LENGTH_SHORT).show();

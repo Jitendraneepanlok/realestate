@@ -4,22 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.tutorial.realestate.Interface.ApiClient;
-import com.tutorial.realestate.Interface.ApiInterface;
+import com.tutorial.realestate.Network.ApiClient;
+import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.MobileVerifyConstant;
 import com.tutorial.realestate.Model.MobileVerifyModel;
-import com.tutorial.realestate.Model.UpdateProfileConstantModel;
-import com.tutorial.realestate.Model.UpdateProfileModel;
 import com.tutorial.realestate.Pojo.MobileVerifyContantPojo;
-import com.tutorial.realestate.Pojo.UpdateProfileContant;
 import com.tutorial.realestate.R;
 
 import retrofit2.Call;
@@ -37,7 +37,12 @@ public class VerifyMobileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_mobile);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.title_bar_color));
+        }
         Intent intent = getIntent();
         mobile_Number = intent.getStringExtra("MOBILE_NUMBER");
         mobile_otp = intent.getStringExtra("MOBILE_OTP");

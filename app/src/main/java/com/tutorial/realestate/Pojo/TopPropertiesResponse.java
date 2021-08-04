@@ -1,21 +1,19 @@
 package com.tutorial.realestate.Pojo;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class FeaturedPropertyResponse {
-
+public class TopPropertiesResponse {
     @SerializedName("resMessage")
     @Expose
     private String resMessage;
     @SerializedName("response")
     @Expose
     private String response;
-    @SerializedName("FeaturedProperties")
+    @SerializedName("TopProperties")
     @Expose
-    private List<FeaturedPropertyPojo> featuredProperties = null;
+    private List<TopProperty> topProperties = null;
 
     public String getResMessage() {
         return resMessage;
@@ -33,12 +31,12 @@ public class FeaturedPropertyResponse {
         this.response = response;
     }
 
-    public List<FeaturedPropertyPojo> getFeaturedProperties() {
-        return featuredProperties;
+    public List<TopProperty> getTopProperties() {
+        return topProperties;
     }
 
-    public void setFeaturedProperties(List<FeaturedPropertyPojo> featuredProperties) {
-        this.featuredProperties = featuredProperties;
-
+    public void setTopProperties(List<TopProperty> topProperties) {
+        this.topProperties = topProperties;
     }
+
 }
