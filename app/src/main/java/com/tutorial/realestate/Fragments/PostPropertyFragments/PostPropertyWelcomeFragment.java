@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
@@ -30,6 +31,7 @@ public class PostPropertyWelcomeFragment extends Fragment {
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     LinearLayoutManager HorizontalLayout;
     AppCompatImageView img_back;
+    AppCompatButton btn_continue;
 
     @Nullable
     @Override
@@ -40,6 +42,13 @@ public class PostPropertyWelcomeFragment extends Fragment {
     }
 
     private void initView() {
+        btn_continue = (AppCompatButton)view.findViewById(R.id.btn_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallStartFragment();
+            }
+        });
         img_back = (AppCompatImageView) view.findViewById(R.id.img_back);
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,12 +71,23 @@ public class PostPropertyWelcomeFragment extends Fragment {
         post_recyler_view.setAdapter(adapter);
     }
 
+
+
     public void AddItemsToRecyclerViewArrayList() {
         // Adding items to ArrayList
         source = new ArrayList<>();
         source.add("Uploading Property Photos");
         source.add("Tagging the right locality");
         source.add("Contacing intrested buyers");
+
+    }
+    private void CallStartFragment() {
+        PostPropertyStartFragment postPropertyStartFragment = new PostPropertyStartFragment();
+        androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.post_propertyfragments, postPropertyStartFragment);
+        transaction.addToBackStack("Back");
+        transaction.commit();
 
     }
 }

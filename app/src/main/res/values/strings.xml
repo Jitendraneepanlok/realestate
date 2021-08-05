@@ -93,6 +93,15 @@
     <string name="pos_10">Get 10X more Responses by just</string>
     <string name="btn_continue">Continue</string>
     <string name="pos_11"><![CDATA[Applicable only for property owner & not Agent.]]></string>
+    <string name="start_text">Lets start by knowing you better</string>
+    <string name="i_am_owner">I am an Owner</string>
+    <string name="i_am_agent">I am an Agent</string>
+    <string name="i_am_builder">I am a Builder</string>
+    <string name="contact_details">Enter your contact details</string>
+    <string name="agent_connect">Help property seekers connect with you</string>
+    <string name="agent_name">Name</string>
+    <string name="agent_email">Email - Id</string>
+    <string name="agent_number">Phone Number</string>
 
 
 </resources>

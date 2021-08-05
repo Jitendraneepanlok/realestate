@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:src="@drawable/ic_backspace" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_details"
+        android:layout_below="@+id/img_back"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:id="@+id/tvdetails"
+        android:fontFamily="@font/arialmt"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvdetails"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_50sdp">
+
+        <com.hbb20.CountryCodePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ccp"
+            app:ccp_defaultNameCode="IND"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:background="@drawable/edittext_style" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_style"
+            android:inputType="number"
+            android:maxLength="10"
+            android:id="@+id/etphone"
+            android:hint="12345467890"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_12sdp"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:text="@string/btn_continue"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:id="@+id/btn_continue"
+            android:textStyle="bold"
+            android:background="@drawable/btn_style"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
