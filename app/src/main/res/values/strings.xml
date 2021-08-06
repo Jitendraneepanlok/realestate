@@ -29,8 +29,8 @@
     <string name="agent">Agent</string>
     <string name="feature">Featured Properties</string>
     <string name="contact">Contact Us</string>
-    <string name="name">Name*</string>
-    <string name="email">Email*</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
     <string name="subject">Subject*</string>
     <string name="message">Your Message*</string>
     <string name="top_properties">Top Properties</string>
@@ -100,8 +100,39 @@
     <string name="contact_details">Enter your contact details</string>
     <string name="agent_connect">Help property seekers connect with you</string>
     <string name="agent_name">Name</string>
-    <string name="agent_email">Email - Id</string>
+    <string name="agent_email">Email Id</string>
     <string name="agent_number">Phone Number</string>
+    <string name="owner_name">Hi Test Owner , </string>
+    <string name="owner_posting"> You are posting your property for :</string>
+    <string name="sell">Sell</string>
+    <string name="rent_lease">Rent / Lease</string>
+    <string name="pg">PG</string>
+    <string name="owner_property_type">What type of property is it ?</string>
+    <string name="residential">Residential</string>
+    <string name="commercial">Commercial</string>
+    <string name="property_type">Property Type</string>
+    <string name="flat_apartment">Flat / Apartment</string>
+    <string name="house">House</string>
+    <string name="villa">Villa</string>
+    <string name="builder_floor">Builder Floor</string>
+    <string name="plot">Plot</string>
+    <string name="studio_apartment">Studio Apartment</string>
+    <string name="panthouse">Pent House</string>
+    <string name="farm_house">Farm House</string>
+    <string name="office_space">Office Space</string>
+    <string name="office_park">Office in IT Park / SEZ</string>
+    <string name="shop">Shop</string>
+    <string name="ShowRoom">Showroom</string>
+    <string name="commercial_land">Commercial Land</string>
+    <string name="wearhouse">Wearhouse / Godown</string>
+    <string name="industrial">Industrial Land</string>
+    <string name="industrial_building">Industrial Building</string>
+    <string name="industrial_shed">Industrial Shed</string>
+    <string name="agricultural">Agricultural Land</string>
+    <string name="owner_property_location">Where is your property located</string>
+    <string name="enter_city">Enter City</string>
+    <string name="enter_project">Enter Project / Society or Locality</string>
+    <string name="optional_address">Enter Address (Optional)</string>
 
 
 </resources>

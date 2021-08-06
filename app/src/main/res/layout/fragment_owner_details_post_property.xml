@@ -31,35 +31,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@+id/tvdetails"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_50sdp">
+        android:layout_marginTop="@dimen/_50sdp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp">
 
         <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ccp"
-            app:ccp_defaultNameCode="IND"
-            android:paddingTop="@dimen/_5sdp"
-            android:paddingLeft="@dimen/_10sdp"
+            android:paddingTop="@dimen/_13sdp"
             android:paddingBottom="@dimen/_5sdp"
-            android:background="@drawable/edittext_style" />
+            app:ccp_defaultNameCode="IND" />
 
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edittext_style"
-            android:inputType="number"
-            android:maxLength="10"
-            android:id="@+id/etphone"
-            android:hint="12345467890"
-            android:layout_marginLeft="@dimen/_5sdp"
-            android:paddingTop="@dimen/_10sdp"
-            android:paddingLeft="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_12sdp"/>
+            android:backgroundTint="@color/white">
+
+            <EditText
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="@string/agent_number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:paddingLeft="@dimen/_5sdp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </LinearLayout>
 

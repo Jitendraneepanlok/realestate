@@ -78,7 +78,7 @@ public class PostPropertyStartFragment extends Fragment {
     }
 
     private void CallOwnerFragment() {
-        PostPropertyOwnerFragment postPropertyOwnerFragment = new PostPropertyOwnerFragment();
+        PostPropertyOwnerDetailsFragment postPropertyOwnerFragment = new PostPropertyOwnerDetailsFragment();
         androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.post_propertyfragments, postPropertyOwnerFragment);

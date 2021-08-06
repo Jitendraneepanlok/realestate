@@ -9,30 +9,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.tutorial.realestate.R;
 
-public class PostPropertyOwnerFragment extends Fragment {
-    AppCompatImageView img_back;
+public class OwnerPropertyLocationFragment extends Fragment {
     View view;
+    AppCompatImageView img_back;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_owner_post_property, container, false);
+        view = inflater.inflate(R.layout.fragment_owner_location,container,false);
         initView();
         return view;
     }
-
     private void initView() {
-        img_back = (AppCompatImageView)view.findViewById(R.id.img_back);
+        img_back = (AppCompatImageView) view.findViewById(R.id.img_back);
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PostPropertyStartFragment postPropertyStartFragment = new PostPropertyStartFragment();
+                OwnerPropertyTypeFragment ownerPropertyTypeFragment = new OwnerPropertyTypeFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, postPropertyStartFragment);
+                transaction.replace(R.id.post_propertyfragments, ownerPropertyTypeFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }
