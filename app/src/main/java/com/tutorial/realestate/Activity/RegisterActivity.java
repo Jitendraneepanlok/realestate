@@ -19,9 +19,13 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.hbb20.CountryCodePicker;
+import com.tutorial.realestate.Fragments.IndividualBuyerRegistrationFragment;
+import com.tutorial.realestate.Fragments.IndividualRegistrationFragment;
 import com.tutorial.realestate.Network.ApiClient;
 import com.tutorial.realestate.Network.ApiInterface;
 import com.tutorial.realestate.Model.RegistrationConsModel;
@@ -36,15 +40,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 public class RegisterActivity extends AppCompatActivity {
-    CountryCodePicker ccp;
-    private String selected_country_code;
-    String DEFAULT_COUNTRY = Locale.getDefault().getCountry();
-    CheckBox cb_terms;
-    String url = "https://realestate.10to100.com/terms-conditions";
-    private ProgressDialog pDialog;
-    LinearLayout btn_register;
-    EditText etfullname, etemail_id, etpassword, etphone;
-    String FullName, password, Email, Phone;
+
+    RadioGroup rg_register;
+    RadioButton rb_individual, rb_buyer;
+    String Value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,182 +55,45 @@ public class RegisterActivity extends AppCompatActivity {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.title_bar_color));
         }
-        initView();
-        if (isNetworkStatusAvialable(getApplicationContext())) {
-            Toast.makeText(getApplicationContext(), "Internet Available", Toast.LENGTH_SHORT).show();
-        } else {
-            AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-            builder1.setMessage("Check your Internet");
-            builder1.setCancelable(false);
-            builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    Intent dialogIntent = new Intent(Settings.ACTION_SETTINGS);
-                    dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(dialogIntent);
-                }
-            });
-           /* builder1.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });*/
-            AlertDialog alert11 = builder1.create();
-            alert11.show();
-        }
-    }
+        callIndividualFragment();
+        rb_individual = (RadioButton) findViewById(R.id.rb_individual);
+        rb_buyer = (RadioButton) findViewById(R.id.rb_buyer);
 
-    private void initView() {
-
-        etfullname = (EditText) findViewById(R.id.etfullname);
-        etemail_id = (EditText) findViewById(R.id.etemail_id);
-        etpassword = (EditText) findViewById(R.id.etpassword);
-        etphone = (EditText) findViewById(R.id.etphone);
-
-        btn_register = (LinearLayout) findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        rg_register = (RadioGroup) findViewById(R.id.rg_register);
+        rg_register.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                checkvalidation();
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (rb_individual.isChecked()) {
+                    Value = rb_individual.getText().toString();
+                    callIndividualFragment();
+                } else if (rb_buyer.isChecked()) {
+                    Value = rb_buyer.getText().toString();
+                    callBuyerFragment();
+                }
             }
         });
 
-        ccp = (CountryCodePicker) findViewById(R.id.ccp);
-      /*  cb_terms = (CheckBox)findViewById(R.id.cb_terms);
-        cb_terms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-              //  isCheckedValue = isChecked;
-                if (isChecked) {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(url));
-                    startActivity(i);
-                }else {
-                    Toast.makeText(RegisterActivity.this, R.string.Something_worng, Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });*/
     }
 
-    private void checkvalidation() {
-        etfullname = (EditText) findViewById(R.id.etfullname);
-        etemail_id = (EditText) findViewById(R.id.etemail_id);
-        etpassword = (EditText) findViewById(R.id.etpassword);
-        etphone = (EditText) findViewById(R.id.etphone);
-
-        FullName = etfullname.getText().toString().trim();
-        password = etpassword.getText().toString().trim();
-        Email = etemail_id.getText().toString().trim();
-        String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-        Phone = etphone.getText().toString().trim();
-
-        if (!FullName.equals("")) {
-            if (!Email.equals("")/*matches(emailpattern)*/) {
-                if (!password.equals("")) {
-                    if (!Phone.equals("")/*isValidPhone(Phone)*/) {
-                        signUpApi();
-                    } else {
-                        etphone.setError("Please Enter Mobile No.");
-                    }
-                } else {
-                    etpassword.setError("Please Enter Password");
-                }
-
-            } else {
-                etemail_id.setError("Please Enter Email-Id");
-            }
-        } else {
-            etfullname.setError("Please Enter your full name");
-        }
+    private void callBuyerFragment() {
+        IndividualBuyerRegistrationFragment individualBuyerRegistrationFragment = new IndividualBuyerRegistrationFragment();
+        androidx.fragment.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fram_register, individualBuyerRegistrationFragment);
+        transaction.addToBackStack("Back");
+        transaction.commit();
     }
 
-    private boolean isValidPhone(String phone) {
-        boolean check = false;
-        if (!Pattern.matches("[0-10]+", phone)) {
-            if (phone.length() < 10) {
-                check = false;
-            } else {
-                check = true;
-            }
-        } else {
-            check = false;
-        }
-        return check;
+    private void callIndividualFragment() {
+
+        IndividualRegistrationFragment individualRegistrationFragment = new IndividualRegistrationFragment();
+        androidx.fragment.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fram_register, individualRegistrationFragment);
+        transaction.addToBackStack("Back");
+        transaction.commit();
     }
-
-
-    private void signUpApi() {
-        pDialog = new ProgressDialog(RegisterActivity.this);
-        pDialog.setMessage("Please wait...");
-        pDialog.setCancelable(false);
-        pDialog.show();
-
-        RegistrationModel registrationModel = new RegistrationModel();
-        registrationModel.setRegUserName(FullName);
-        registrationModel.setContactNumber(Phone);
-        registrationModel.setRegEmail(Email);
-        registrationModel.setRegUserPassword(password);
-        registrationModel.setCountryCode("+91");
-        registrationModel.setUserType("Individual");
-
-        RegistrationConsModel registrationConsModel = new RegistrationConsModel();
-        registrationConsModel.setRealstate(registrationModel);
-
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<RegistrationPojoConstant> call = apiService.postSignUp(registrationConsModel);
-        try {
-            call.enqueue(new Callback<RegistrationPojoConstant>() {
-                @Override
-                public void onResponse(Call<RegistrationPojoConstant> call, retrofit2.Response<RegistrationPojoConstant> response) {
-                    if (response.isSuccessful()) {
-                        Log.e("Response", "" + response.body().toString());
-                        Toast.makeText(RegisterActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
-
-                        String Mobile = response.body().getRealstate().getMobile();
-                        String Mobile_Otp = response.body().getRealstate().getMobileOtp();
-                        String UID = response.body().getRealstate().getUserId();
-
-                        Intent intent = new Intent(getApplicationContext(), VerifyMobileActivity.class);
-                        intent.putExtra("MOBILE_NUMBER", Mobile);
-                        intent.putExtra("MOBILE_OTP", Mobile_Otp);
-                        intent.putExtra("USER_ID", UID);
-                        startActivity(intent);
-
-
-                        pDialog.dismiss();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, response.body().getRealstate().getResponse(), Toast.LENGTH_SHORT).show();
-                        pDialog.cancel();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<RegistrationPojoConstant> call, Throwable t) {
-                    // Log error here since request failed
-                    Toast.makeText(RegisterActivity.this, "" + t, Toast.LENGTH_SHORT).show();
-                    Log.e("Failer", "" + t);
-                    pDialog.dismiss();
-                }
-            });
-        } catch (Exception ex) {
-            Log.e("LoginFailer", "" + ex);
-            Toast.makeText(this, "" + ex, Toast.LENGTH_SHORT).show();
-            pDialog.dismiss();
-        }
-
-
-    }
-
-    public static boolean isNetworkStatusAvialable(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager != null) {
-            NetworkInfo netInfos = connectivityManager.getActiveNetworkInfo();
-            if (netInfos != null)
-                if (netInfos.isConnected())
-                    return true;
-        }
-        return false;
-    }
-
 }
+
+
+

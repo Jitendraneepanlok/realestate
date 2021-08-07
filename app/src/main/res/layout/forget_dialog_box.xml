@@ -1,134 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_5sdp"
     android:orientation="vertical"
-    android:background="@color/white"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_cancel"
-        android:id="@+id/img_cancel"
-        android:layout_gravity="end"
-        android:layout_margin="@dimen/_2sdp"/>
+    app:cardCornerRadius="@dimen/_5sdp">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/_20sdp"
-        android:paddingBottom="@dimen/_20sdp">
+        android:paddingBottom="@dimen/_15sdp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:src="@drawable/ic_cancel" />
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_90sdp"
-            android:src="@drawable/login_1" />
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/img_cancel"
+            android:src="@drawable/login_1"
+            android:id="@+id/img_forget"
+            android:layout_marginTop="@dimen/_10sdp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:fontFamily="@font/arialmt"
+            android:layout_below="@+id/img_forget"
             android:gravity="center"
             android:paddingLeft="@dimen/_5sdp"
+            android:id="@+id/txt_welcome"
             android:paddingRight="@dimen/_5sdp"
-            android:fontFamily="@font/arialmt"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:textSize="@dimen/_12sdp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_20sdp">
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="@string/user_name"
-            android:background="@drawable/edittext_style"
-            android:paddingTop="@dimen/_10sdp"
-            android:id="@+id/etforget"
-            android:paddingLeft="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_10sdp"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_gravity="end"
-        android:gravity="end">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/backtologin"
-            android:fontFamily="@font/arialmt"
-            android:id="@+id/tv_forgetpass"
+            android:text="@string/welcome"
             android:textColor="@color/black"
-            android:gravity="end"
-            android:singleLine="true"
-            android:layout_marginRight="@dimen/_10sdp"
             android:textSize="@dimen/_12sdp" />
 
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/btn_style"
-        android:paddingTop="@dimen/_10sdp"
-        android:paddingBottom="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:id="@+id/llbtn_submit"
-        android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginRight="@dimen/_20sdp">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/etforget"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_login_btn_icon"/>
+            android:background="@drawable/edittext_style"
+            android:hint="@string/user_name"
+            android:inputType="textEmailAddress"
+            android:layout_below="@+id/txt_welcome"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_forgetpass"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/submit"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:fontFamily="@font/arialmt"/>
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/arialmt"
+            android:gravity="end"
+            android:layout_below="@+id/etforget"
+            android:singleLine="true"
+            android:text="@string/backtologin"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:id="@+id/llbtn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_below="@+id/tv_forgetpass"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/btn_style"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
 
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_login_btn_icon" />
 
-   </LinearLayout>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="@font/arialmt"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

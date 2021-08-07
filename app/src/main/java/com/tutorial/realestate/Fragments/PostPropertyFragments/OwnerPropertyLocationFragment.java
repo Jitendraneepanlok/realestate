@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -17,6 +18,7 @@ import com.tutorial.realestate.R;
 public class OwnerPropertyLocationFragment extends Fragment {
     View view;
     AppCompatImageView img_back;
+    AppCompatButton btn_continue;
 
     @Nullable
     @Override
@@ -34,6 +36,19 @@ public class OwnerPropertyLocationFragment extends Fragment {
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.replace(R.id.post_propertyfragments, ownerPropertyTypeFragment);
+                transaction.addToBackStack("Back");
+                transaction.commit();
+            }
+        });
+
+        btn_continue = (AppCompatButton)view.findViewById(R.id.btn_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OwnerMoreDetailsFragment ownerMoreDetailsFragment = new OwnerMoreDetailsFragment();
+                androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.post_propertyfragments, ownerMoreDetailsFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }

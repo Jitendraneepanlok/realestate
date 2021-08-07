@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.tutorial.realestate.Activity.LoginActivity;
 import com.tutorial.realestate.Activity.PostProperty.PostPropertyActivity;
@@ -31,6 +32,9 @@ import com.tutorial.realestate.R;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -53,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
     DrawerLayout drawer;
     String Name, UID;
     NavController navController;
+    BottomNavigationView bottom_nav_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        bottomNavigationmenu();
 
         // from tollbar text clicked
         tv_post_property = (AppCompatTextView) findViewById(R.id.tv_post_property);
@@ -227,6 +233,38 @@ public class HomeActivity extends AppCompatActivity {
             pDialog.dismiss();
         }
 
+    }
+
+
+    private void bottomNavigationmenu() {
+        bottom_nav_view = (BottomNavigationView) findViewById(R.id.bottom_nav_view);
+        bottom_nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.navigation_home:
+                        navController.navigate(R.id.nav_home);
+                        return true;
+
+                    case R.id.navigation_search:
+                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navigation_saved:
+                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navigation_alert:
+                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navigation_profile:
+                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
 }

@@ -154,7 +154,9 @@
                 android:orientation="vertical"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="center"
-                android:gravity="center">
+                android:gravity="center"
+                android:paddingBottom="@dimen/_7sdp"
+                android:paddingTop="@dimen/_5sdp">
 
                 <TextView
                     android:layout_width="match_parent"

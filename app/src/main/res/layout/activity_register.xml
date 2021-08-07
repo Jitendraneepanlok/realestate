@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,193 +7,111 @@
     android:orientation="vertical"
     tools:context=".Activity.RegisterActivity">
 
-<!--    <include layout="@layout/toolbar"/>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/rl_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/_10sdp">
+                android:layout_marginTop="@dimen/_7sdp"
+                android:orientation="vertical">
 
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_90sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
                     android:src="@drawable/login_1" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/img"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
                     android:text="@string/welcome_register"
                     android:textColor="@color/black"
-                    android:gravity="center"
-                    android:paddingLeft="@dimen/_5sdp"
-                    android:paddingRight="@dimen/_5sdp"
-                    android:fontFamily="@font/arialmt"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:textSize="@dimen/_12sdp"/>
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/arialmt" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/ll1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_below="@+id/rl_1"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_15sdp">
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/full_name"
-                    android:background="@drawable/edittext_style"
-                    android:paddingTop="@dimen/_9sdp"
-                    android:id="@+id/etfullname"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:paddingBottom="@dimen/_9sdp"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/user_name"
-                    android:background="@drawable/edittext_style"
-                    android:paddingTop="@dimen/_9sdp"
-                    android:id="@+id/etemail_id"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:paddingBottom="@dimen/_9sdp"/>
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="@string/password"
-                    android:background="@drawable/edittext_style"
-                    android:paddingTop="@dimen/_9sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:id="@+id/etpassword"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:paddingBottom="@dimen/_9sdp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_15sdp">
-
-                <com.hbb20.CountryCodePicker
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ccp"
-                    app:ccp_defaultNameCode="IND"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:paddingBottom="@dimen/_5sdp"
-                   android:background="@drawable/edittext_style" />
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:id="@+id/etphone"
-                    android:hint="12345467890"
-                    android:layout_marginLeft="@dimen/_5sdp"
-                    android:paddingTop="@dimen/_10sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:paddingBottom="@dimen/_12sdp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_gravity="center"
-                android:paddingLeft="@dimen/_5sdp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <CheckBox
+
+                <RadioGroup
+                    android:id="@+id/rg_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/terms"
-                    android:fontFamily="@font/arialmt"
-                    android:id="@+id/cb_terms"
-                    android:textColor="@color/black"
-                    android:singleLine="true"
-                    android:textSize="@dimen/_12sdp" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
 
 
-            </LinearLayout>
+                    <RadioButton
+                        android:id="@+id/rb_individual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/arialmt"
+                        android:text="@string/register"
+                        android:paddingLeft="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:textColor="@color/black"
+                        android:textStyle="normal" />
 
-            <LinearLayout
+
+                    <RadioButton
+                        android:id="@+id/rb_buyer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arialmt"
+                        android:paddingLeft="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:text="@string/Buyer_Tenant_Registeration"
+                        android:textColor="@color/black"
+                        android:textStyle="normal" />
+
+
+                </RadioGroup>
+
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fram_register"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/btn_style"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:id="@+id/btn_register"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp">
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll1"
+                android:layout_marginTop="@dimen/_5sdp"/>
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_for_registration"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/singup"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
-                    android:layout_marginLeft="@dimen/_4sdp"
-                    android:fontFamily="@font/arialmt"/>
-
-
-            </LinearLayout>
-
-
-
-
-        </LinearLayout>
-
-
+        </RelativeLayout>
 
 
     </androidx.core.widget.NestedScrollView>
 
 
-</LinearLayout>
+</RelativeLayout>

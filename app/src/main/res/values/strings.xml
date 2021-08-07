@@ -133,6 +133,18 @@
     <string name="enter_city">Enter City</string>
     <string name="enter_project">Enter Project / Society or Locality</string>
     <string name="optional_address">Enter Address (Optional)</string>
+    <string name="register">Register</string>
+    <string name="Buyer_Tenant_Registeration">Buyer/Tenant Registeration</string>
+    <string name="search">Search</string>
+    <string name="saved">Saved</string>
+    <string name="alert">Alert</string>
+    <string name="profile">Profile</string>
+    <string name="owner_property_more_details">More details to get relevant buyers</string>
+    <string name="unit_details">Unit Details</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="balcony">Balcony (optional)</string>
+    <string name="txt_balcony">Balcony</string>
 
 
 </resources>
