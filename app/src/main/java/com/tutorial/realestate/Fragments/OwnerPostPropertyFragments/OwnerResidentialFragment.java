@@ -1,4 +1,4 @@
-package com.tutorial.realestate.Fragments.PostPropertyFragments;
+package com.tutorial.realestate.Fragments.OwnerPostPropertyFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
 import com.tutorial.realestate.R;

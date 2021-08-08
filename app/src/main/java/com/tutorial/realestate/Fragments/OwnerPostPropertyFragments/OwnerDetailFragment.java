@@ -1,4 +1,4 @@
-package com.tutorial.realestate.Fragments.PostPropertyFragments;
+package com.tutorial.realestate.Fragments.OwnerPostPropertyFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,32 +10,31 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
 import com.tutorial.realestate.R;
 
-public class OwnerPropertyLocationFragment extends Fragment {
-    View view;
-    AppCompatImageView img_back;
-    AppCompatButton btn_continue;
+public class OwnerDetailFragment extends Fragment {
+    private View view;
+    private AppCompatImageView img_back;
+    private AppCompatButton btn_continue;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_owner_location,container,false);
+        view = inflater.inflate(R.layout.fragment_owner_details, container, false);
         initView();
         return view;
     }
+
     private void initView() {
         img_back = (AppCompatImageView) view.findViewById(R.id.img_back);
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OwnerPropertyTypeFragment ownerPropertyTypeFragment = new OwnerPropertyTypeFragment();
+                PostPropertyOwnerDetailsFragment postPropertyOwnerDetailsFragment = new PostPropertyOwnerDetailsFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerPropertyTypeFragment);
+                transaction.replace(R.id.post_propertyfragments, postPropertyOwnerDetailsFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }
@@ -45,10 +44,10 @@ public class OwnerPropertyLocationFragment extends Fragment {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OwnerMoreDetailsFragment ownerMoreDetailsFragment = new OwnerMoreDetailsFragment();
+                OwnerDetailsTwoFragment ownerDetailsTwoFragment = new OwnerDetailsTwoFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerMoreDetailsFragment);
+                transaction.replace(R.id.post_propertyfragments, ownerDetailsTwoFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }

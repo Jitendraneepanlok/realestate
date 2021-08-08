@@ -145,6 +145,34 @@
     <string name="bathroom">Bathroom</string>
     <string name="balcony">Balcony (optional)</string>
     <string name="txt_balcony">Balcony</string>
+    <string name="floor_detail">Floor Details</string>
+    <string name="floor_detail_total">Total Number of Floor in Building</string>
+    <string name="floor">Floor</string>
+    <string name="floor_property">Total Property Floor</string>
+    <string name="floor_no">Floor No. of your Property</string>
+    <string name="select">Select</string>
+    <string name="floor_num">Floor No.</string>
+    <string name="furnish">Furnishing</string>
+    <string name="unfisnshing">Un-Furnished</string>
+    <string name="semi_furnished">Semi-Furnished</string>
+    <string name="fully_furnished">Fully-Furnished</string>
+    <string name="property_Area">Property Area</string>
+    <string name="property_either">Provide either Carpet Area or Super Area</string>
+    <string name="cartpet">Carpet Area</string>
+    <string name="sqft">Sqft</string>
+    <string name="superArea">Super Area</string>
+    <string name="receive_notification">I want to receive notifications</string>
+    <string name="unit">Unit</string>
+    <string name="owner_price_except">Price You Expect</string>
+    <string name="enter_except_price">\u20B9 Enter Expected Price</string>
+    <string name="enter_token_ammount">\u20B9 Enter Booking / Token Amount (optional)</string>
+    <string name="property_status">Status of your Property</string>
+    <string name="txt_avaiable">Available Form</string>
+    <string name="under_constraction">Under Construction</string>
+    <string name="ready_to_move">Ready to Move</string>
+    <string name="txt_date">MM/YY</string>
+    <string name="txt_age">Age of construction</string>
+    <string name="age_constraction">Age of Construction</string>
 
 
 </resources>

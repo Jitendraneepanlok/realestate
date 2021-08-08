@@ -1,4 +1,4 @@
-package com.tutorial.realestate.Fragments.PostPropertyFragments;
+package com.tutorial.realestate.Fragments.OwnerPostPropertyFragments;
 
 import android.content.Intent;
 import android.graphics.Paint;

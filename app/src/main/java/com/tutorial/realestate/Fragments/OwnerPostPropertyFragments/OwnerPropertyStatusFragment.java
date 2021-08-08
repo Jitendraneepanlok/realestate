@@ -1,12 +1,9 @@
-package com.tutorial.realestate.Fragments.PostPropertyFragments;
+package com.tutorial.realestate.Fragments.OwnerPostPropertyFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,23 +14,21 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.tutorial.realestate.Fragments.CommercialDetails;
-import com.tutorial.realestate.Fragments.ResidentialProprtyFragment;
 import com.tutorial.realestate.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OwnerPropertyTypeFragment extends Fragment {
+public class OwnerPropertyStatusFragment extends Fragment {
     View view;
     AppCompatImageView img_back;
-    TabLayout tab_type;
-    ViewPager view_pager_type;
+    TabLayout tab_available;
+    ViewPager view_pager_tab_available;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_owner_property_type,container,false);
+        view = inflater.inflate(R.layout.fragment_owner_property_status,container,false);
         initView();
         return view;
     }
@@ -42,28 +37,27 @@ public class OwnerPropertyTypeFragment extends Fragment {
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OwnerDetailsTwoFragment ownerDetailsTwoFragment = new OwnerDetailsTwoFragment();
+                OwnerExpectPriceFragment ownerExpectPriceFragment = new OwnerExpectPriceFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerDetailsTwoFragment);
+                transaction.replace(R.id.post_propertyfragments, ownerExpectPriceFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }
         });
-
-        tab_type = (TabLayout)view.findViewById(R.id.tab_type);
-        tab_type.setTabGravity(TabLayout.GRAVITY_CENTER);
-        view_pager_type = (ViewPager)view.findViewById(R.id.view_pager_type);
+        tab_available = (TabLayout)view.findViewById(R.id.tab_available);
+        tab_available.setTabGravity(TabLayout.GRAVITY_CENTER);
+        view_pager_tab_available = (ViewPager)view.findViewById(R.id.view_pager_tab_available);
         AddTabsToFragments();
-        tab_type.setupWithViewPager(view_pager_type);
+        tab_available.setupWithViewPager(view_pager_tab_available);
 
 
     }
     private void AddTabsToFragments() {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
-        viewPagerAdapter.addFrag(new OwnerResidentialFragment(), getString(R.string.residential));
-        viewPagerAdapter.addFrag(new OwnerCommercialFragment(), getString(R.string.commercial));
-        view_pager_type.setAdapter(viewPagerAdapter);
+        OwnerPropertyStatusFragment.ViewPagerAdapter viewPagerAdapter = new OwnerPropertyStatusFragment.ViewPagerAdapter(getActivity().getSupportFragmentManager());
+        viewPagerAdapter.addFrag(new OwnerUnderConstructionFragment(), getString(R.string.under_constraction));
+        viewPagerAdapter.addFrag(new OwnerReadyToMoveFragment(), getString(R.string.ready_to_move));
+        view_pager_tab_available.setAdapter(viewPagerAdapter);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

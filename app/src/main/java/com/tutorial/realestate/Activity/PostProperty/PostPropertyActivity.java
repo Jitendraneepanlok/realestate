@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.tutorial.realestate.Fragments.PostPropertyFragments.PostPropertyWelcomeFragment;
+import com.tutorial.realestate.Fragments.OwnerPostPropertyFragments.PostPropertyWelcomeFragment;
 import com.tutorial.realestate.R;
 
 public class PostPropertyActivity extends AppCompatActivity {
