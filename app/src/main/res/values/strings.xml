@@ -173,6 +173,14 @@
     <string name="txt_date">MM/YY</string>
     <string name="txt_age">Age of construction</string>
     <string name="age_constraction">Age of Construction</string>
+    <string name="owner_verification_mobile">Verify your number</string>
+    <string name="send_digit">Enter the 6-digit verification code sent on</string>
+    <string name="txt_owner_number">1234567890</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="txt_did_not_recieve">Didn\'t receive the OTP ?</string>
+    <string name="txt_resend">Resend</string>
+    <string name="txt_otp_call">Get OTP on Call</string>
+    <string name="txt_select">Select Your Ad Package</string>
 
 
 </resources>

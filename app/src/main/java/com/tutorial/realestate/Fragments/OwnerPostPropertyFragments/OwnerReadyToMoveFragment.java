@@ -29,11 +29,18 @@ public class OwnerReadyToMoveFragment extends Fragment {
     View view;
     AppCompatTextView tv_construction_age;
     ArrayList<String> listdata;
+    AppCompatButton btn_continue;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_owner_ready_to_move, container, false);
+
+        initView();
+        return view;
+    }
+
+    private void initView() {
         tv_construction_age = (AppCompatTextView) view.findViewById(R.id.tv_construction_age);
         tv_construction_age.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +48,24 @@ public class OwnerReadyToMoveFragment extends Fragment {
                 OpenBottomDialog();
             }
         });
-        return view;
+
+        btn_continue = (AppCompatButton)view.findViewById(R.id.btn_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallCommonFraggment();
+            }
+        });
+    }
+
+    private void CallCommonFraggment() {
+        OwnerOtpFragment ownerOtpFragment = new OwnerOtpFragment();
+        androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.post_propertyfragments, ownerOtpFragment);
+        transaction.addToBackStack("Back");
+        transaction.commit();
+
     }
 
     private void OpenBottomDialog() {

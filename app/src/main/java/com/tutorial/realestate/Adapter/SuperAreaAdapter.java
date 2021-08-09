@@ -14,7 +14,7 @@ import com.tutorial.realestate.R;
 import java.util.List;
 
 public class SuperAreaAdapter extends RecyclerView.Adapter<SuperAreaAdapter.MyView> {
-    private List<String> listdata;
+    private List<String> source;
 
     public class MyView extends RecyclerView.ViewHolder {
         TextView tv_title;
@@ -25,8 +25,8 @@ public class SuperAreaAdapter extends RecyclerView.Adapter<SuperAreaAdapter.MyVi
             img_down = (ImageView)view.findViewById(R.id.img_down);
         }
     }
-    public SuperAreaAdapter(FragmentActivity activity, List<String> verticalList) {
-        this.listdata = verticalList;
+    public SuperAreaAdapter(List<String> verticalList) {
+        this.source = verticalList;
     }
     @Override
     public SuperAreaAdapter.MyView onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -35,12 +35,12 @@ public class SuperAreaAdapter extends RecyclerView.Adapter<SuperAreaAdapter.MyVi
     }
     @Override
     public void onBindViewHolder(final SuperAreaAdapter.MyView holder, final int position) {
-        holder.tv_title.setText(listdata.get(position));
+        holder.tv_title.setText(source.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return listdata.size();
+        return source.size();
     }
 }
 

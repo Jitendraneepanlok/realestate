@@ -36,7 +36,6 @@ public class OwnerMoreDetailsFragment extends Fragment {
     LinearLayoutManager HorizontalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     ArrayList<String> source;
-    ArrayList<String>listdata;
     BedroomAdapter bedroomAdapter;
     BathroomAdapter bathroomAdapter;
     AppCompatTextView txt_popup,txt_floor_no_popup,txt_sqft_2,txt_sqft;
@@ -232,7 +231,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.super_area_dialog);
         dialog.setCancelable(false);
-        ArrayList<String> listdata = new ArrayList<>();
+        ArrayList<String> source = new ArrayList<>();
 
         AppCompatImageView img_cancel = (AppCompatImageView) dialog.findViewById(R.id.img_cancel);
         img_cancel.setOnClickListener(new View.OnClickListener() {
@@ -245,7 +244,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         RecyclerView super_area_recycler = (RecyclerView) dialog.findViewById(R.id.super_area_recycler);
         super_area_recycler.setHasFixedSize(true);
 
-        SuperAreaAdapter adapter = new SuperAreaAdapter(getActivity(), listdata);
+        SuperAreaAdapter adapter = new SuperAreaAdapter(source);
         final  LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         super_area_recycler.setLayoutManager(verticalLayoutManager);
         SuperAreaListData();
@@ -259,26 +258,26 @@ public class OwnerMoreDetailsFragment extends Fragment {
     }
 
     private void SuperAreaListData() {
-        listdata = new ArrayList<>();
-        listdata.add("Sqft");
-        listdata.add("Sqyrd");
-        listdata.add("Sqm");
-        listdata.add("Acre");
-        listdata.add("Bigha");
-        listdata.add("Hectare");
-        listdata.add("Marla");
-        listdata.add("Kanal");
-        listdata.add("Biswa 1");
-        listdata.add("Biswa 2");
-        listdata.add("Ground");
-        listdata.add("Aankadam");
-        listdata.add("Rood");
-        listdata.add("Chatak");
-        listdata.add("Kottah");
-        listdata.add("Cent");
-        listdata.add("Perch");
-        listdata.add("Guntha");
-        listdata.add("Are");
+        source = new ArrayList<>();
+        source.add("Sqft");
+        source.add("Sqyrd");
+        source.add("Sqm");
+        source.add("Acre");
+        source.add("Bigha");
+        source.add("Hectare");
+        source.add("Marla");
+        source.add("Kanal");
+        source.add("Biswa 1");
+        source.add("Biswa 2");
+        source.add("Ground");
+        source.add("Aankadam");
+        source.add("Rood");
+        source.add("Chatak");
+        source.add("Kottah");
+        source.add("Cent");
+        source.add("Perch");
+        source.add("Guntha");
+        source.add("Are");
         
     }
 
@@ -287,7 +286,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.no_floor_dialog);
         dialog.setCancelable(false);
-        ArrayList<String> listdata = new ArrayList<>();
+        ArrayList<String> source = new ArrayList<>();
 
         AppCompatImageView img_cancel = (AppCompatImageView) dialog.findViewById(R.id.img_cancel);
         img_cancel.setOnClickListener(new View.OnClickListener() {
@@ -298,7 +297,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         });
 
         RecyclerView floor_recycler = (RecyclerView) dialog.findViewById(R.id.floor_recycler);
-        NoFloorAdapter adapter = new NoFloorAdapter(getActivity(), source);
+        NoFloorAdapter adapter = new NoFloorAdapter(source);
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         floor_recycler.setLayoutManager(verticalLayoutManager);
         NoFloorListData();
@@ -315,35 +314,26 @@ public class OwnerMoreDetailsFragment extends Fragment {
     }
 
     private void NoFloorListData() {
-        listdata = new ArrayList<>();
-        listdata.add("Lower Basement");
-        listdata.add("Upper Basement");
-        listdata.add("Ground");
-        listdata.add("1");
-        listdata.add("2");
-        listdata.add("3");
-        listdata.add("4");
-        listdata.add("5");
-        listdata.add("6");
-        listdata.add("7");
-        listdata.add("8");
-        listdata.add("9");
-        listdata.add("10");
-        listdata.add("11");
-        listdata.add("12");
-        listdata.add("13");
-        listdata.add("14");
-        listdata.add("15");
-        listdata.add("16");
-        listdata.add("17");
-        listdata.add("18");
-        listdata.add("10");
-        listdata.add("20");
-        listdata.add("21");
-        listdata.add("22");
-        listdata.add("23");
-        listdata.add("24");
-        listdata.add("25");
+        source = new ArrayList<>();
+        source.add("Lower Basement");
+        source.add("Upper Basement");
+        source.add("Ground");
+        source.add("1");
+        source.add("2");
+        source.add("3");
+        source.add("4");
+        source.add("5");
+        source.add("6");
+        source.add("7");
+        source.add("8");
+        source.add("9");
+        source.add("10");
+        source.add("11");
+        source.add("12");
+        source.add("13");
+        source.add("14");
+        source.add("15");
+
 
     }
 
@@ -352,7 +342,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.floor_dialog);
         dialog.setCancelable(false);
-        ArrayList<String> listdata = new ArrayList<>();
+        ArrayList<String> source = new ArrayList<>();
 
         AppCompatImageView img_cancel = (AppCompatImageView) dialog.findViewById(R.id.img_cancel);
         img_cancel.setOnClickListener(new View.OnClickListener() {
@@ -363,7 +353,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
         });
 
         RecyclerView floor_recycler = (RecyclerView) dialog.findViewById(R.id.floor_recycler);
-        FloorAdapter adapter = new FloorAdapter(getActivity(), source);
+        FloorAdapter adapter = new FloorAdapter(source);
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         floor_recycler.setLayoutManager(verticalLayoutManager);
         FloorListData();

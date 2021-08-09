@@ -14,7 +14,7 @@ import com.tutorial.realestate.R;
 import java.util.List;
 
 public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyView> {
-    private List<String> list;
+    private List<String> source;
 
     public class MyView extends RecyclerView.ViewHolder {
         TextView tv_title;
@@ -25,8 +25,8 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyView> {
             img_down = (ImageView)view.findViewById(R.id.img_down);
         }
     }
-    public FloorAdapter(FragmentActivity activity, List<String> verticalList) {
-        this.list = verticalList;
+    public FloorAdapter(List<String> verticalList) {
+        this.source = verticalList;
     }
     @Override
     public FloorAdapter.MyView onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -35,7 +35,7 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyView> {
     }
     @Override
     public void onBindViewHolder(final FloorAdapter.MyView holder, final int position) {
-        holder.tv_title.setText(list.get(position));
+        holder.tv_title.setText(source.get(position));
 //        switch (position){
 //            case 5:
 //                holder.img_down.setVisibility(View.GONE);
@@ -46,7 +46,7 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyView> {
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return source.size();
     }
 }
 

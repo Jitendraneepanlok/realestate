@@ -13,7 +13,7 @@ import com.tutorial.realestate.R;
 import java.util.List;
 
 public class BedroomAdapter extends RecyclerView.Adapter<BedroomAdapter.MyView> {
-    private List<String> list;
+    private List<String> source;
 
     public class MyView extends RecyclerView.ViewHolder {
         TextView tv_title;
@@ -25,7 +25,7 @@ public class BedroomAdapter extends RecyclerView.Adapter<BedroomAdapter.MyView> 
         }
     }
     public BedroomAdapter(List<String> horizontalList) {
-        this.list = horizontalList;
+        this.source = horizontalList;
     }
     @Override
     public BedroomAdapter.MyView onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -34,7 +34,7 @@ public class BedroomAdapter extends RecyclerView.Adapter<BedroomAdapter.MyView> 
     }
     @Override
     public void onBindViewHolder(final BedroomAdapter.MyView holder, final int position) {
-        holder.tv_title.setText(list.get(position));
+        holder.tv_title.setText(source.get(position));
 //        switch (position){
 //            case 5:
 //                holder.img_down.setVisibility(View.GONE);
@@ -45,6 +45,6 @@ public class BedroomAdapter extends RecyclerView.Adapter<BedroomAdapter.MyView> 
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return source.size();
     }
 }

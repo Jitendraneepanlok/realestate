@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 
@@ -20,12 +21,26 @@ import java.util.Calendar;
 public class OwnerUnderConstructionFragment extends Fragment {
     DatePickerDialog picker;
     AppCompatTextView tv_date;
+    AppCompatButton btn_continue;
     View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_owner_under_constraction, container, false);
+
+        initView();
+        return view;
+    }
+
+    private void initView() {
+        btn_continue = (AppCompatButton)view.findViewById(R.id.btn_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CallCommonFragment();
+            }
+        });
         tv_date = (AppCompatTextView) view.findViewById(R.id.tv_date);
         tv_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +48,7 @@ public class OwnerUnderConstructionFragment extends Fragment {
                 OpenMonthOrYearPicker();
             }
         });
-        return view;
+
     }
 
     private void OpenMonthOrYearPicker() {
@@ -49,6 +64,15 @@ public class OwnerUnderConstructionFragment extends Fragment {
                     }
                 }, year, month, day);
         picker.show();
+    }
+
+    private void CallCommonFragment() {
+        OwnerOtpFragment ownerOtpFragment = new OwnerOtpFragment();
+        androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.post_propertyfragments, ownerOtpFragment);
+        transaction.addToBackStack("Back");
+        transaction.commit();
     }
     }
 
