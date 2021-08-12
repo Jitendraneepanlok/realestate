@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import com.tutorial.realestate.Fragments.AgentPostProperty.PostPropertyAgentFragment;
 import com.tutorial.realestate.R;
 
 public class PostPropertyStartFragment extends Fragment {

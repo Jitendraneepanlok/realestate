@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_style_orange"
                 android:text="Sale"
-               android:paddingTop="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
                 android:paddingLeft="@dimen/_10sdp"
                 android:paddingRight="@dimen/_10sdp"

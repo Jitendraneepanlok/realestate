@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/schedule"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txt_properties"
+        android:id="@+id/img_projects"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_schedule"
+        android:textColor="@color/black"
+        android:fontFamily="@font/arialmt"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/txt_no_contacted"
+        android:layout_below="@+id/img_projects"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/you_schedule_have"
+        android:fontFamily="@font/arialmt"
+        android:gravity="center"
+        android:id="@+id/txt_havenot"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/txt_no_contacted"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arialmt"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/start_book_tour"
+        android:id="@+id/txt_start_searching"
+        android:layout_below="@+id/txt_havenot"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_start_searching"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/btn_style"
+        android:text="@string/asearch_property"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:fontFamily="@font/arialmt"
+        android:layout_marginLeft="@dimen/_60sdp"
+        android:layout_marginRight="@dimen/_60sdp"/>
+
+
+</LinearLayout>

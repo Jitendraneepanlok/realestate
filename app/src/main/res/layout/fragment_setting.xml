@@ -133,64 +133,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:clickable="true"
-                    app:cardCornerRadius="@dimen/_5sdp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="@dimen/_7sdp"
-                        android:paddingBottom="@dimen/_7sdp"
-                        android:layout_marginLeft="@dimen/_10sdp"
-                        android:layout_marginRight="@dimen/_10sdp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="@dimen/_5sdp"
-                            android:src="@drawable/ic_notifications"/>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/notification"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/arialmt"
-                            android:layout_gravity="center"
-                            android:paddingLeft="@dimen/_10sdp"
-                            android:textSize="@dimen/_12sdp"/>
-
-                        <com.polyak.iconswitch.IconSwitch
-                            app:isw_icon_left = "@drawable/ic_notifications"
-                            app:isw_icon_right = "@drawable/ic_notifications"
-                            app:isw_background_color = "#2196F3"
-                            app:isw_thumb_color_left = "#FFC107"
-                            app:isw_thumb_color_right = "#0C0101"
-                            android:id = "@+id/iconSwitch"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="@dimen/_120sdp"
-                            android:layout_width = "wrap_content"
-                            android:layout_height = "wrap_content"
-                            app:isw_default_selection = "left"
-                            app:isw_icon_size = "10dp"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:orientation="vertical">
 

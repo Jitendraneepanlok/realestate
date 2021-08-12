@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_projects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_properties"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/saved_search" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_no_contacted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_projects"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/arialmt"
+        android:gravity="center"
+        android:text="@string/no_saved_search"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_havenot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_no_contacted"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/arialmt"
+        android:gravity="center"
+        android:text="@string/you_havenot_saved_search" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_start_searching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_havenot"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/arialmt"
+        android:gravity="center"
+        android:text="@string/start_saved_shortlist" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_start_searching"
+        android:layout_marginLeft="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_60sdp"
+        android:background="@drawable/btn_style"
+        android:fontFamily="@font/arialmt"
+        android:text="@string/asearch_property"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

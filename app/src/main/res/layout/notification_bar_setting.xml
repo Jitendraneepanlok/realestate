@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_7sdp"
+    android:paddingBottom="@dimen/_7sdp"
+    android:background="@color/colorPrimary">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_backspace_2"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/_10sdp"
+        android:id="@+id/img_back"/>
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notification"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/_10sdp"
+        android:textSize="@dimen/_14sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:singleLine="true"
+        android:fontFamily="@font/arialmt"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:id="@+id/option_switch"/>
+
+</RelativeLayout>

@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.tutorial.realestate.Activity.LoginActivity;
 import com.tutorial.realestate.Activity.PostProperty.PostPropertyActivity;
+import com.tutorial.realestate.Activity.SavedActivity;
 import com.tutorial.realestate.Adapter.TopPropertiesAdapter;
 import com.tutorial.realestate.Model.LogoutContantModel;
 import com.tutorial.realestate.Model.LogoutModel;
@@ -251,11 +252,11 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_saved:
-                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), SavedActivity.class));
                         return true;
 
                     case R.id.navigation_alert:
-                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        navController.navigate(R.id.action_home_to_notificationFragment);
                         return true;
 
                     case R.id.navigation_profile:

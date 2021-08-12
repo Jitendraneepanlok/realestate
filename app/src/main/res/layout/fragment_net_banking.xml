@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chosse_bank"
+        android:fontFamily="@font/arialmt"
+        android:textColor="@color/black"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:id="@+id/txt_bank"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_bank"
+        android:id="@+id/rl_bank_image"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/axix"
+            android:id="@+id/img_axix"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hdfc"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_180sdp"
+            android:id="@+id/img_hdfc"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sbi"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_110sdp"
+            android:id="@+id/img_sbi"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icici"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:id="@+id/img_icici"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_axix"
+            android:layout_marginLeft="@dimen/_11sdp"
+            android:text="AXIX"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_axix"
+            android:text="HDFC"
+            android:layout_marginRight="@dimen/_185sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_axix"
+            android:text="SBI"
+            android:layout_marginRight="@dimen/_125sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_axix"
+            android:text="ICICI"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_bank_image"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtother_bank"
+            android:textColor="@color/black"
+            android:fontFamily="@font/arialmt"
+            android:text="Select Other Banks"/>
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_other_bank"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_below="@+id/txtother_bank"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:layout_below="@+id/spin_other_bank"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/black"
+            android:text="@string/bank_desdc"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

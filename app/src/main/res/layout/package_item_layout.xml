@@ -6,15 +6,15 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="@dimen/_3sdp"
-    android:elevation="@dimen/_3sdp"
+    android:elevation="@dimen/_4sdp"
     app:cardCornerRadius="@dimen/_5sdp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/_10sdp"
-        android:paddingLeft="@dimen/_10sdp"
-        android:paddingRight="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
         android:paddingBottom="@dimen/_10sdp">
 
         <androidx.appcompat.widget.AppCompatTextView

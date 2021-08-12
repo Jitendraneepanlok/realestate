@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtdummy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="@string/txt_enter_payment"
+        android:textColor="@color/black" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtdummy"
+        android:layout_margin="@dimen/_20sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etcard_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:cursorVisible="true"
+                android:hint="1234-5678-9011-1234"
+                android:inputType="number"
+                android:maxLength="16"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:paddingBottom="@dimen/_13sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/ic_credit_card" />
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_below="@+id/etcard_no"
+                android:background="@color/gray" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etcard_expery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:cursorVisible="true"
+                android:hint="MM YYYY"
+                android:inputType="number"
+                android:maxLength="16"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:paddingBottom="@dimen/_13sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_below="@+id/view1"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_140sdp"
+                android:background="@color/gray" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etcvv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:cursorVisible="true"
+                android:hint="   CVV"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="@dimen/_40sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:paddingRight="@dimen/_40sdp"
+                android:paddingBottom="@dimen/_13sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:paddingRight="@dimen/_20sdp"
+                android:src="@drawable/ic_baseline_lock_24" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_below="@+id/etcard_expery"
+                android:background="@color/gray" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etcard_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view3"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:cursorVisible="true"
+                android:hint="Name On Card"
+                android:inputType="number"
+                android:maxLength="16"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:paddingBottom="@dimen/_13sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:layout_below="@+id/etcard_name"
+                android:background="@color/gray" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
