@@ -1,4 +1,4 @@
-package com.tutorial.realestate.Fragments.OwnerPostPropertyFragments;
+package com.tutorial.realestate.Fragments.BuilderPostProperty;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -26,12 +26,14 @@ import com.tutorial.realestate.Adapter.BedroomAdapter;
 import com.tutorial.realestate.Adapter.FloorAdapter;
 import com.tutorial.realestate.Adapter.NoFloorAdapter;
 import com.tutorial.realestate.Adapter.SuperAreaAdapter;
+import com.tutorial.realestate.Fragments.AgentPostProperty.AgentPropertyLocationFragment;
+import com.tutorial.realestate.Fragments.OwnerPostPropertyFragments.OwnerExpectPriceFragment;
 import com.tutorial.realestate.Interface.RecyclerItemClickListener;
 import com.tutorial.realestate.R;
 
 import java.util.ArrayList;
 
-public class OwnerMoreDetailsFragment extends Fragment {
+public class BuilderMoreDetailsFragment extends Fragment {
     View view;
     AppCompatImageView img_back;
     RecyclerView recyler_bedroom, recyler_bathroom, recyler_balcony;
@@ -40,7 +42,7 @@ public class OwnerMoreDetailsFragment extends Fragment {
     ArrayList<String> source;
     BedroomAdapter bedroomAdapter;
     BathroomAdapter bathroomAdapter;
-    AppCompatTextView txt_popup,txt_floor_no_popup,txt_sqft_2,txt_sqft;
+    AppCompatTextView txt_popup, txt_floor_no_popup, txt_sqft_2, txt_sqft;
     AppCompatButton btn_continue;
     String[] bedroomlist = {"6 BHK", "7 BHK", "8 BHK", "9 BHK", "10 BHK", ">10 BHK"};
     String[] superAreaList = {"Sqft", "Sqyrd", "Sqm", "Acre", "Bigha", "Hectare", "Marla", "Kanal", "Biswa 1", "Biswa 2", "Ground", "Aankadam", "Rood", "Chatak", "Kottah", "Cent", "Perch", "Guntha", "Are"};
@@ -53,20 +55,21 @@ public class OwnerMoreDetailsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_owner_more_details, container, false);
+        view = inflater.inflate(R.layout.fragment_bulder_more_details, container, false);
         initView();
+
         return view;
     }
 
     private void initView() {
-        btn_continue = (AppCompatButton)view.findViewById(R.id.btn_continue);
+        btn_continue = (AppCompatButton) view.findViewById(R.id.btn_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OwnerExpectPriceFragment ownerExpectPriceFragment = new OwnerExpectPriceFragment();
+                BuilderExpectPriceFragment builderExpectPriceFragment = new BuilderExpectPriceFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerExpectPriceFragment);
+                transaction.replace(R.id.post_propertyfragments, builderExpectPriceFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }
@@ -76,10 +79,10 @@ public class OwnerMoreDetailsFragment extends Fragment {
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OwnerPropertyLocationFragment ownerPropertyLocationFragment = new OwnerPropertyLocationFragment();
+                AgentPropertyLocationFragment agentPropertyLocationFragment = new AgentPropertyLocationFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerPropertyLocationFragment);
+                transaction.replace(R.id.post_propertyfragments, agentPropertyLocationFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();
             }

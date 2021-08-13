@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -17,7 +17,7 @@
             android:paddingTop="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
-            android:text="@string/bedroom"
+            android:text="@string/age_constraction"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
@@ -29,8 +29,8 @@
             android:layout_margin="@dimen/_5sdp"
             android:src="@drawable/ic_cancel" />
 
-        <ListView
-            android:id="@+id/listview_age_constraction"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_age_constraction"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/img_cancel"

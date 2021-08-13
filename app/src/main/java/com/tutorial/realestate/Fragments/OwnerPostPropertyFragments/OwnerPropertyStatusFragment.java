@@ -53,6 +53,7 @@ public class OwnerPropertyStatusFragment extends Fragment {
 
 
     }
+
     private void AddTabsToFragments() {
         OwnerPropertyStatusFragment.ViewPagerAdapter viewPagerAdapter = new OwnerPropertyStatusFragment.ViewPagerAdapter(getActivity().getSupportFragmentManager());
         viewPagerAdapter.addFrag(new OwnerUnderConstructionFragment(), getString(R.string.under_constraction));

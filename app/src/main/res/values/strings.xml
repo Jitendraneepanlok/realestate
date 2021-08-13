@@ -86,6 +86,7 @@
     <string name="post_3">We have over 15 Lac buyers and tenants for you!</string>
     <string name="post_4">You are posting this property for</string>
     <string name="post_5">\u20B9</string>
+    <string name="rate">\u20B9  8.13 - 9.94 Cr</string>
     <string name="post_6">FREE !</string>
     <string name="post_7">Free Professional Photoshoot</string>
     <string name="post_8">Get Contact Details of upto 5 Responses</string>
@@ -166,6 +167,8 @@
     <string name="owner_price_except">Price You Expect</string>
     <string name="enter_except_price">\u20B9 Enter Expected Price</string>
     <string name="enter_token_ammount">\u20B9 Enter Booking / Token Amount (optional)</string>
+    <string name="select_brokerage">\u20B9 Select Brokerage</string>
+
     <string name="property_status">Status of your Property</string>
     <string name="txt_avaiable">Available Form</string>
     <string name="under_constraction">Under Construction</string>
@@ -250,6 +253,7 @@
     <string name="you_schedule_have">You haven\'t scheduled any tour yet.</string>
     <string name="start_book_tour">Start searching to book a tour.</string>
     <string name="required_notify">Requirement Notification</string>
+    <string name="txt_trasnaction_type">Transaction Type</string>
 
 
 </resources>

@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import com.tutorial.realestate.Fragments.BuilderPostProperty.BuilderMoreDetailsFragment;
 import com.tutorial.realestate.Fragments.OwnerPostPropertyFragments.OwnerMoreDetailsFragment;
 import com.tutorial.realestate.Fragments.OwnerPostPropertyFragments.OwnerPropertyTypeFragment;
 import com.tutorial.realestate.R;
@@ -45,12 +46,12 @@ public class AgentPropertyLocationFragment extends Fragment {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  OwnerMoreDetailsFragment ownerMoreDetailsFragment = new OwnerMoreDetailsFragment();
+                BuilderMoreDetailsFragment builderMoreDetailsFragment = new BuilderMoreDetailsFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.post_propertyfragments, ownerMoreDetailsFragment);
+                transaction.replace(R.id.post_propertyfragments, builderMoreDetailsFragment);
                 transaction.addToBackStack("Back");
-                transaction.commit();*/
+                transaction.commit();
             }
         });
     }

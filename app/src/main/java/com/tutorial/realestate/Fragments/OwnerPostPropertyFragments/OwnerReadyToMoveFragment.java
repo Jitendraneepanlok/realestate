@@ -71,10 +71,8 @@ public class OwnerReadyToMoveFragment extends Fragment {
     private void OpenBottomDialog() {
         Dialog dialog = new Dialog(getActivity(), R.style.DialogTheme);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bedroom_dialog);
+        dialog.setContentView(R.layout.bedroom_dialog_ready);
         dialog.setCancelable(false);
-
-        ArrayList<String> listdata = new ArrayList<>();
 
         AppCompatImageView img_cancel = dialog.findViewById(R.id.img_cancel);
         img_cancel.setOnClickListener(new View.OnClickListener() {
@@ -84,13 +82,13 @@ public class OwnerReadyToMoveFragment extends Fragment {
             }
         });
 
-        RecyclerView recycler_age = (RecyclerView) dialog.findViewById(R.id.recycler_age);
+        RecyclerView recycler_view_age_constraction = (RecyclerView) dialog.findViewById(R.id.recycler_view_age_constraction);
         ConstructionAgeAdapter adapter = new ConstructionAgeAdapter(getActivity(), listdata);
         LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        recycler_age.setLayoutManager(verticalLayoutManager);
+        recycler_view_age_constraction.setLayoutManager(verticalLayoutManager);
         ConstructionListData();
-        recycler_age.setItemAnimator(new DefaultItemAnimator());
-        recycler_age.setAdapter(adapter);
+        recycler_view_age_constraction.setItemAnimator(new DefaultItemAnimator());
+        recycler_view_age_constraction.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         dialog.getWindow().setGravity(Gravity.BOTTOM);

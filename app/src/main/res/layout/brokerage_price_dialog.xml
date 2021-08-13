@@ -12,7 +12,7 @@
         android:paddingTop="@dimen/_10sdp"
         android:paddingRight="@dimen/_10sdp"
         android:paddingBottom="@dimen/_10sdp"
-        android:text="@string/unit"
+        android:text="Brokerage"
         android:textColor="@color/black"
         android:textSize="@dimen/_12sdp" />
 
@@ -25,12 +25,14 @@
         android:src="@drawable/ic_cancel" />
 
     <ListView
-        android:id="@+id/super_area_list"
+        android:id="@+id/brokerage_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/img_cancel"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:paddingLeft="@dimen/_10sdp"
         android:paddingRight="@dimen/_10sdp" />
 
+
 </RelativeLayout>
+
