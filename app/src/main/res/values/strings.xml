@@ -254,6 +254,30 @@
     <string name="start_book_tour">Start searching to book a tour.</string>
     <string name="required_notify">Requirement Notification</string>
     <string name="txt_trasnaction_type">Transaction Type</string>
+    <string name="starting_hey">Hey ! What\'s on your mind ?</string>
+    <string name="i_want_buy_property">I Want to Buy a Property</string>
+    <string name="i_want_rent_property">I Want to Rent a Property / PG</string>
+    <string name="i_want_sell_property">I Want to sell  / Rent a Property </string>
+    <string name="i_already_posted_property">I Have already posted a Property</string>
+    <string name="btn_next">Next</string>
+    <string name="lets_start_knowing">Let\'s Start by Knowing you better</string>
+    <string name="skip">Skip</string>
+    <string name="you_are_an">You are An</string>
+    <string name="inidivisual">Individual</string>
+    <string name="enter_you_name">Your Name</string>
+    <string name="tenants_saved_upto">Tenants like you save Upto \u20B9 23,000 a</string>
+    <string name="txt_paying_rent">year by paying rent with Credit Card</string>
+    <string name="start_otp_verify">We have sent an OTP on your mobile. Kindly verify</string>
+    <string name="txt_otp_not_recieve">Not received the OTP yet ? Try Again</string>
+    <string name="by_whatsapp">Resend on WhatsApp</string>
+    <string name="resend_on_sms">Resend on SMS</string>
+    <string name="btn_verify">Verify</string>
+    <string name="you_are_loking_to_buy">You are looking to Buy in</string>
+    <string name="enter_city_locality">Enter a city or locality or project / society</string>
+    <string name="popular_city">Popular Cities</string>
+    <string name="clear_all">Clear All</string>
+    <string name="btn_see_best_mach">See Best Matching Properties</string>
+    <string name="almost_there">You\'re almost there !</string>
 
 
 </resources>

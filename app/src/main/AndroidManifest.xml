@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tutorial.realestate">
 
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -35,7 +34,6 @@
 
     <supports-screens android:anyDensity="true" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -45,10 +43,13 @@
         android:theme="@style/AppTheme">
 
         <activity
+            android:name=".Activity.StartingDetailsActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
             android:name=".Activity.SavedActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
-
         <activity
             android:name=".Activity.Payment.PaymentActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"

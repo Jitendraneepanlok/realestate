@@ -18,7 +18,6 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.widget.Toast;
 
-import com.tutorial.realestate.NavigationActivity.HomeActivity;
 import com.tutorial.realestate.Prefrences.SessionManager;
 import com.tutorial.realestate.R;
 
@@ -73,15 +72,15 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                if (sessionManager.getValueBoolean(SessionManager.VALUE)) {
+              /*  if (sessionManager.getValueBoolean(SessionManager.VALUE)) {
                     // call home activity ,
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
-                } else {
-                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                } else {*/
+                    Intent i = new Intent(SplashActivity.this, StartingDetailsActivity.class);
                     startActivity(i);
                     finish();
-                }
+              //  }
             }
         }, 3000);
     }

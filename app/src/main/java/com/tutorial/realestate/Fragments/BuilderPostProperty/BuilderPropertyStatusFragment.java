@@ -142,12 +142,12 @@ public class BuilderPropertyStatusFragment extends Fragment {
     }
 
     private void CallCommonFragment() {
-       /* OwnerOtpFragment ownerOtpFragment = new OwnerOtpFragment();
+        BuilderOtpFragment builderOtpFragment = new BuilderOtpFragment();
         androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.post_propertyfragments, ownerOtpFragment);
+        transaction.replace(R.id.post_propertyfragments, builderOtpFragment);
         transaction.addToBackStack("Back");
-        transaction.commit();*/
+        transaction.commit();
     }
 
 
