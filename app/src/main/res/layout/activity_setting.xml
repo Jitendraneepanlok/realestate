@@ -4,10 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/setting_toolbar"
+        android:id="@+id/setting_toolbar"/>
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:layout_below="@+id/setting_toolbar">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -29,9 +34,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/personalized"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="@dimen/_12sdp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -98,9 +103,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_information"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
+
                     android:textSize="@dimen/_12sdp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -182,8 +188,8 @@
                     android:id="@+id/txt_feedback"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/feedback"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 

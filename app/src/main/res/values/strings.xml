@@ -278,6 +278,37 @@
     <string name="clear_all">Clear All</string>
     <string name="btn_see_best_mach">See Best Matching Properties</string>
     <string name="almost_there">You\'re almost there !</string>
+    <string name="hello_guest">Hello , Guest !</string>
+    <string name="become_prime_member">Became a Prime Member</string>
+    <string name="one_member">One membership, Many exclusive privileges</string>
+    <string name="txt_join_prime">Join Prime</string>
+    <string name="contacted_properties">Contacted Properties</string>
+    <string name="see_properties">See Properties you shortlisted recently</string>
+    <string name="shortlist_proerties">Shortlisted Properties</string>
+    <string name="last_viewed_properties">Last Viewed Properties</string>
+    <string name="recent_viewd">Recently viewed Properties</string>
+    <string name="see_saved_properties">See Saved Searches</string>
+    <string name="access_tour">Access your scheduled Video Tour here</string>
+    <string name="login_signup">Login / Signup</string>
+    <string name="menu_buy_properties">Properties for Buy</string>
+    <string name="menu_rent_properties">Properties for Rent</string>
+    <string name="menu_new_properties">New Projects</string>
+    <string name="menu_explore_properties">Explore Localities</string>
+    <string name="advertise">Advertise with Us</string>
+    <string name="feedback">FeedBack</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="personalized">Personalize</string>
+    <string name="manage_notify">Manage Notifications</string>
+    <string name="txt_clear_history">Clear History</string>
+    <string name="txt_clear_favrote">Clear Favorites</string>
+    <string name="txt_information">Information &amp; Support</string>
+    <string name="txt_term_condition">Terms and Conditions</string>
+    <string name="txt_privacy_policy">Privacy policy</string>
+    <string name="txt_about_us">About Us</string>
+    <string name="txt_version">RealEstate Version 1.0</string>
+    <string name="txt_share_app">Share the App</string>
+    <string name="txt_acount">Update Accounts</string>
+    <string name="update_profile">Update Profile</string>
 
 
 </resources>

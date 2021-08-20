@@ -37,44 +37,35 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private static final Integer[] IMAGES= {R.drawable.login_1,R.drawable.login_1,R.drawable.login_1,R.drawable.login_1};
+    private static final Integer[] IMAGES = {R.drawable.login_1, R.drawable.login_1, R.drawable.login_1, R.drawable.login_1};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private ViewPager view_pager_ads;
-
-
     View root;
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-       root = inflater.inflate(R.layout.fragment_home, container, false);
-      /*  final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-*/
-        tab_layout = root.findViewById(R.id.tab_layout);
+        root = inflater.inflate(R.layout.fragment_home, container, false);
+       /* tab_layout = root.findViewById(R.id.tab_layout);
         tab_layout.setTabGravity(TabLayout.GRAVITY_FILL);
         view_pager = root.findViewById(R.id.view_pager);
         tab_layout.setupWithViewPager(view_pager);
-        AddTabsToFragments();
+        AddTabsToFragments();*/
 
         SecondViewPager();
         return root;
     }
 
     private void SecondViewPager() {
-        for(int i=0;i<IMAGES.length;i++)
+        for (int i = 0; i < IMAGES.length; i++)
             ImagesArray.add(IMAGES[i]);
-        view_pager_ads = (ViewPager)root.findViewById(R.id.view_pager_ads);
+        view_pager_ads = (ViewPager) root.findViewById(R.id.view_pager_ads);
 
-        view_pager_ads.setAdapter(new SlidingImage_Adapter(getActivity(),ImagesArray));
-        CirclePageIndicator indicator = (CirclePageIndicator)root.findViewById(R.id.indicator);
+        view_pager_ads.setAdapter(new SlidingImage_Adapter(getActivity(), ImagesArray));
+        CirclePageIndicator indicator = (CirclePageIndicator) root.findViewById(R.id.indicator);
         indicator.setViewPager(view_pager_ads);
         final float density = getResources().getDisplayMetrics().density;
         indicator.setRadius(5 * density);
-        NUM_PAGES =IMAGES.length;
+        NUM_PAGES = IMAGES.length;
         // Auto start of viewpager
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
@@ -116,7 +107,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void AddTabsToFragments() {
+   /* private void AddTabsToFragments() {
         HomeFragment.ViewPagerAdapter viewPagerAdapter = new HomeFragment.ViewPagerAdapter(this.getChildFragmentManager());
         viewPagerAdapter.addFrag(new BuyFragment(), getString(R.string.buy));
         viewPagerAdapter.addFrag(new RentFragment(), getString(R.string.rent));
@@ -126,35 +117,35 @@ public class HomeFragment extends Fragment {
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
-            private final List<Fragment> mFragmentList = new ArrayList<>();
-            private final List<String> mFragmentTitleList = new ArrayList<>();
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-            public ViewPagerAdapter(@NonNull FragmentManager fm) {
-                super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-            }
-
-            @NonNull
-            @Override
-            public Fragment getItem(int position) {
-                return mFragmentList.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                return mFragmentList.size();
-            }
-
-            public void addFrag(Fragment fragment, String title) {
-                mFragmentList.add(fragment);
-                mFragmentTitleList.add(title);
-            }
-
-            @Nullable
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return mFragmentTitleList.get(position);
-            }
+        public ViewPagerAdapter(@NonNull FragmentManager fm) {
+            super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
 
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFrag(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
+
+*/
 }

@@ -16,7 +16,49 @@
             app:destination="@id/nav_alert"
             app:exitAnim="@anim/nav_default_exit_anim" />
 
+        <action
+            android:id="@+id/action_home_to_profileFragment"
+            app:destination="@id/nav_profile"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action android:id="@+id/action_home_to_buyFragment"
+            app:destination="@id/nav_buy"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action android:id="@+id/action_home_to_rentFragment"
+            app:destination="@id/nav_rent"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+        <action android:id="@+id/action_home_to_agentFragment"
+            app:destination="@id/nav_agent"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_agent"
+        android:name="com.tutorial.realestate.Fragments.AgentFragment"
+        android:label="@string/agent"
+        tools:layout="@layout/fragment_agent"/>
+
+    <fragment
+        android:id="@+id/nav_rent"
+        android:name="com.tutorial.realestate.Fragments.RentFragment"
+        android:label="@string/rent"
+        tools:layout="@layout/fragment_rent"/>
+
+    <fragment
+        android:id="@+id/nav_buy"
+        android:name="com.tutorial.realestate.Fragments.BuyFragment"
+        android:label="@string/buy"
+        tools:layout="@layout/fragment_buy"/>
+
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.home.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"/>
 
     <fragment
         android:id="@+id/nav_alert"
@@ -24,18 +66,18 @@
         android:label="@string/notification"
         tools:layout="@layout/fragment_notification">
 
-        <action
+      <!--  <action
             android:id="@+id/action_notificationFragment_to_notificationsettingFragment"
             app:destination="@id/nav_notification_setting"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:exitAnim="@anim/nav_default_exit_anim" />-->
 
     </fragment>
 
-    <fragment
+   <!-- <fragment
         android:id="@+id/nav_notification_setting"
         android:name="com.tutorial.realestate.NavigationActivity.ui.home.NotificationSettingFragment"
         android:label="@string/notification"
-        tools:layout="@layout/fragment_notification_settings"/>
+        tools:layout="@layout/fragment_notification_settings"/>-->
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -142,7 +184,7 @@
 
 
 
-    <fragment
+   <!-- <fragment
         android:id="@+id/nav_setting"
         android:name="com.tutorial.realestate.NavigationActivity.ui.settings.SeetingFragment"
         android:label="@string/setting"
@@ -169,13 +211,6 @@
         android:id="@+id/nav_update_profile"
         android:name="com.tutorial.realestate.Fragments.UpdateProfileFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_update_profile"/>
-
-    <fragment
-        android:id="@+id/nav_others"
-        android:name="com.tutorial.realestate.NavigationActivity.ui.others.OthersFragment"
-        android:label="@string/other"
-        tools:layout="@layout/fragment_others"/>
-
+        tools:layout="@layout/fragment_update_profile"/>-->
 
 </navigation>

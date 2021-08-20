@@ -124,11 +124,7 @@
     <color name="saddle_brown">#8B4513</color>
     <color name="dark_magenta">#8B008B</color>
     <color name="dark_red">#8B0000</color>
-
-
     <color name="blue_violet">#4992B4</color>
-
-
     <color name="light_sky_blue">#87CEFA</color>
     <color name="sky_blue">#87CEEB</color>
     <color name="gray">#AEA9A9</color>
@@ -136,6 +132,7 @@
     <color name="olive">#808000</color>
     <color name="purple">#800080</color>
     <color name="maroon">#800000</color>
+    <color name="black_transparent">#99000000</color>
     <color name="aquamarine">#7FFFD4</color>
     <color name="chartreuse">#7FFF00</color>
     <color name="lawn_green">#7CFC00</color>

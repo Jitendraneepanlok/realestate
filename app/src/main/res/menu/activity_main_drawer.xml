@@ -3,70 +3,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/menu_top"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_buy_properties"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_buy_properties" />
+
+        <item
+            android:id="@+id/nav_rent_properties"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_rent_properties" />
+
+        <item
+            android:id="@+id/nav_agent"
+            android:icon="@drawable/ic_home"
+            android:title="@string/agent" />
+
+        <item
+            android:id="@+id/nav_new_properties"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_new_properties" />
+
+        <item
+            android:id="@+id/nav_explore_properties"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_explore_properties" />
+
+
     </group>
 
-    <group android:checkableBehavior="single">
-    <item
-        android:id="@+id/nav_gallery"
+    <group android:id="@+id/menu_center"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_postproperty"
+            android:icon="@drawable/ic_feature"
+            android:title="@string/post_properties" />
+        <item
+            android:id="@+id/nav_advertise"
+            android:icon="@drawable/ic_feature"
+            android:title="@string/advertise" />
+
+    </group>
+
+
+    <group android:id="@+id/menu_mediuim"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_feature"
             android:title="@string/feature" />
-    </group>
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_top_properties"
             android:icon="@drawable/ic_top_properties"
             android:title="@string/top_properties" />
-    </group>
-
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_popular_search"
             android:icon="@drawable/ic_popular_search"
             android:title="@string/popular_search" />
+
+        <item
+            android:id="@+id/nav_quick_links"
+            android:icon="@drawable/ic_quick_links"
+            android:title="@string/quick_link" />
     </group>
 
-        <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_quick_links"
-                android:icon="@drawable/ic_quick_links"
-                android:title="@string/quick_link" />
-        </group>
+    <group android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_contact"
-            android:title="@string/contact" />
-    </group>
+            android:icon="@drawable/ic_feedback"
+            android:title="@string/feedback" />
 
-    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rateus"
+            android:icon="@drawable/ic_rate"
+            android:title="@string/rate_us" />
+
         <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_settings"
             android:title="@string/setting" />
-    </group>
 
-        <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_others"
-                android:icon="@drawable/ic_others"
-                android:title="@string/other" />
-        </group>
-
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share"
             android:title="@string/share" />
-    </group>
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_cancel"

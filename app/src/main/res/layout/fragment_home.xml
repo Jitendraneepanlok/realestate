@@ -4,85 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".NavigationActivity.ui.home.HomeFragment">
 
 
-            <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cart_count"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@drawable/searchview_style"
+            app:queryHint="Search Here" />
+
+        <RelativeLayout
+            android:id="@+id/rlfirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_ads"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_5sdp" />
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="@dimen/_130sdp"
+                android:gravity="center"
+                app:centered="true"
+                app:fillColor="#df0623"
+                app:pageColor="@color/white"
+                app:snap="false" />
 
 
-                <androidx.appcompat.widget.SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_cart_count"
-                    app:queryHint="Search Here"
-                    android:layout_marginTop="@dimen/_3sdp"
-                    android:layout_marginLeft="@dimen/_12sdp"
-                    android:layout_marginRight="@dimen/_12sdp"
-                    android:background="@drawable/searchview_style"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/indicator"
+                android:layout_centerHorizontal="true"
+                android:minHeight="?attr/actionBarSize"
+                app:tabGravity="fill"
+                app:tabIndicatorFullWidth="false"
+                android:visibility="gone"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/gray_demo"
+                app:tabTextColor="@color/gray" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:id="@+id/rlfirst">
-
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/view_pager_ads"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_140sdp"
-                        android:layout_marginLeft="@dimen/_5sdp"
-                        android:layout_marginRight="@dimen/_5sdp"
-                        android:layout_marginTop="@dimen/_3sdp"/>
-
-                    <com.viewpagerindicator.CirclePageIndicator
-                        android:id="@+id/indicator"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        app:centered="true"
-                        app:fillColor="#df0623"
-                        app:pageColor="@color/white"
-                        app:snap="false"
-                        android:layout_marginTop="@dimen/_130sdp"/>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tab_layout"
+                android:layout_marginTop="@dimen/_5sdp" />
 
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:tabMode="fixed"
-                        app:tabMaxWidth="0dp"
-                        android:layout_below="@+id/indicator"
-                        app:tabSelectedTextColor="@color/gray_demo"
-                        app:tabTextColor="@color/gray"
-                        app:tabIndicatorFullWidth="false"
-                        android:minHeight="?attr/actionBarSize"
-                        app:tabGravity="fill"
-                        android:layout_centerHorizontal="true"
-                        />
+        </RelativeLayout>
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/view_pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_below="@+id/tab_layout"/>
+    </LinearLayout>
 
 
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
+</LinearLayout>
 
 
 

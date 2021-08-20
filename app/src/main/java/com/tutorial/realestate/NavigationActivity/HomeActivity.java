@@ -18,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.tutorial.realestate.Activity.LoginActivity;
 import com.tutorial.realestate.Activity.PostProperty.PostPropertyActivity;
 import com.tutorial.realestate.Activity.SavedActivity;
+import com.tutorial.realestate.Activity.SettingActivity;
 import com.tutorial.realestate.Adapter.TopPropertiesAdapter;
 import com.tutorial.realestate.Model.LogoutContantModel;
 import com.tutorial.realestate.Model.LogoutModel;
@@ -59,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
     String Name, UID;
     NavController navController;
     BottomNavigationView bottom_nav_view;
+    AppCompatTextView btn_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +86,16 @@ public class HomeActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         headerView = navigationView.getHeaderView(0);
-        tvusname = (TextView) headerView.findViewById(R.id.tvusname);
-        tvusname.setText(Name);
+        /*tvusname = (TextView) headerView.findViewById(R.id.tvusname);
+        tvusname.setText(Name);*/
+
+        btn_login = (AppCompatTextView) headerView.findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        });
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_setting)
                 .setDrawerLayout(drawer)
@@ -99,28 +109,24 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()) {
-                   /* case R.id.nav_privacy:
-                        String url = "https://realestate.10to100.com/privacy-policy";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
+
+                    case R.id.nav_buy_properties:
+                        navController.navigate(R.id.action_home_to_buyFragment);
 
                         break;
 
-                    case R.id.nav_refund:
-                        String link = "https://realestate.10to100.com/refund-policy";
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setData(Uri.parse(link));
-                        startActivity(intent);
+                    case R.id.nav_rent_properties:
+                        navController.navigate(R.id.action_home_to_rentFragment);
                         break;
 
-                    case R.id.nav_about_us:
-                        String aboutlink = "https://realestate.10to100.com/about-us";
-                        Intent in = new Intent(Intent.ACTION_VIEW);
-                        in.setData(Uri.parse(aboutlink));
-                        startActivity(in);
+                    case R.id.nav_agent:
+                        navController.navigate(R.id.action_home_to_agentFragment);
                         break;
-*/
+
+                    case R.id.nav_setting:
+                        startActivity(new Intent(getApplicationContext(), SettingActivity.class));
+                        break;
+
                     case R.id.nav_logout:
 
                         OpenLoggedOutDailog();
@@ -260,7 +266,7 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_profile:
-                        Toast.makeText(HomeActivity.this, "Cooming Soon", Toast.LENGTH_SHORT).show();
+                        navController.navigate(R.id.action_home_to_profileFragment);
                         return true;
                 }
                 return false;

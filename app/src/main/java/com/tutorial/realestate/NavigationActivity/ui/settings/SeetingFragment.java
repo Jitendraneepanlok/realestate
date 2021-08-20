@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,8 +24,9 @@ import com.tutorial.realestate.R;
 public class SeetingFragment extends Fragment {
     private NavController navController;
     SeetingModel seetingModel;
-    CardView card_changepass,card_update_profile,card_city;
+    AppCompatTextView txt_chane_pass, txt_update;
     View root;
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         seetingModel = ViewModelProviders.of(this).get(SeetingModel.class);
         root = inflater.inflate(R.layout.fragment_setting, container, false);
@@ -37,25 +39,27 @@ public class SeetingFragment extends Fragment {
                 textView.setText(s);
             }
         });*/
-       initView();
+//        initView();
         return root;
     }
 
+/*
     private void initView() {
-        card_changepass = (CardView) root.findViewById(R.id.card_changepass);
-        card_changepass.setOnClickListener(new View.OnClickListener() {
+        txt_chane_pass = (AppCompatTextView) root.findViewById(R.id.txt_chane_pass);
+        txt_chane_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_SeetingFragment_to_changePasswordFragment);
 
             }
         });
-        card_update_profile = (CardView)root.findViewById(R.id.card_update_profile);
-        card_update_profile.setOnClickListener(new View.OnClickListener() {
+        txt_update = (AppCompatTextView) root.findViewById(R.id.txt_update);
+        txt_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_SeetingFragment_to_updateProfileFragment);
             }
         });
     }
+*/
 }

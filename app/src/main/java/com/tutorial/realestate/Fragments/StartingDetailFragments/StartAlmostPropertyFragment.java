@@ -1,5 +1,6 @@
 package com.tutorial.realestate.Fragments.StartingDetailFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tutorial.realestate.Adapter.AlmostBedroomadapter;
 import com.tutorial.realestate.Adapter.AlmostPropertyAdapter;
 import com.tutorial.realestate.Helper.Album;
+import com.tutorial.realestate.NavigationActivity.HomeActivity;
 import com.tutorial.realestate.R;
 
 import java.util.ArrayList;
@@ -106,12 +108,14 @@ public class StartAlmostPropertyFragment extends Fragment {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* StartAlmostPropertyFragment startAlmostPropertyFragment = new StartAlmostPropertyFragment();
+               /* StartSellPropertyFragment startSellPropertyFragment = new StartSellPropertyFragment();
                 androidx.fragment.app.FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 androidx.fragment.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.start_frame_main, startAlmostPropertyFragment);
+                transaction.replace(R.id.start_frame_main, startSellPropertyFragment);
                 transaction.addToBackStack("Back");
                 transaction.commit();*/
+                startActivity(new Intent(getActivity(), HomeActivity.class));
+                getActivity().finish();
             }
         });
 
