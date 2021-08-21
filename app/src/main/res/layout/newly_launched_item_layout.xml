@@ -20,18 +20,43 @@
             android:src="@drawable/dummy_image"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/img_dummy"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/arialmt"
-            android:text="@string/app_name"
+            android:text="@string/dummy_name"
             android:paddingLeft="@dimen/_7sdp"
             android:paddingRight="@dimen/_5sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_7sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:text="Sector 137, Noida"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_area"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_7sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/_5sdp"
+            android:text="@string/app_name"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_bhk"
@@ -42,35 +67,13 @@
             android:fontFamily="@font/arialmt"
             android:paddingLeft="@dimen/_7sdp"
             android:paddingRight="@dimen/_5sdp"
-            android:text="2 BHK Flat"/>
+            android:text="@string/bhk"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_city"
+            android:id="@+id/txt_ready_tomove"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_bhk"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/arialmt"
-            android:paddingLeft="@dimen/_7sdp"
-            android:paddingRight="@dimen/_5sdp"
-            android:text="Mahagun Moderne"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_area"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_city"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/arialmt"
-            android:paddingLeft="@dimen/_7sdp"
-            android:paddingRight="@dimen/_5sdp"
-            android:text="Sector 78 , Noida"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_ready"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_area"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/arialmt"
             android:paddingLeft="@dimen/_7sdp"
@@ -81,23 +84,23 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_2sdp"
             android:background="@color/light_grey"
-            android:layout_below="@+id/txt_ready"
+            android:layout_below="@+id/txt_ready_tomove"
             android:id="@+id/view"
             android:layout_marginTop="@dimen/_10sdp"/>
 
-       <androidx.appcompat.widget.AppCompatImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/ic_phone_red"
-           android:paddingLeft="@dimen/_7sdp"
-           android:paddingRight="@dimen/_5sdp"
-           android:layout_marginTop="@dimen/_10sdp"
-           android:layout_below="@+id/view"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone_red"
+            android:paddingLeft="@dimen/_7sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/view"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Call_Agent"
+            android:text="@string/Call_Owner"
             android:textColor="@color/red"
             android:textStyle="bold"
             android:textSize="@dimen/_12sdp"

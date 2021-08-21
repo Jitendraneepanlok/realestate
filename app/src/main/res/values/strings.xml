@@ -326,6 +326,14 @@
     <string name="txt_fresh_property">Fresh Properties for you</string>
     <string name="see_all">See All</string>
     <string name="txt_ready_tomove">Ready to move Projects</string>
+    <string name="dummy_name">Exotica Fresco</string>
+    <string name="bhk">2,3,4 BHK Flat</string>
+    <string name="Call_Owner">Call Owner</string>
+    <string name="Call_Agent">Call Agent</string>
+    <string name="txt_new_launch">Newly Launched Projects</string>
+    <string name="txt_demand">Project in Demand</string>
+    <string name="txt_popular_local">popular Localities</string>
+    <string name="txt_feature">Featured Projects</string>
 
 
 </resources>

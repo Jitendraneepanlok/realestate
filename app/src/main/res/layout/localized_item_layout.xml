@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arialmt"
+            android:textSize="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:background="@color/trasparygray"
+            android:text="@string/app_name"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_2bhk"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arialmt"
+            android:textSize="@dimen/_12sdp"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="2 BHK : Rs. 16.9 Lac - 3.24 Cr"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_3bhk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:textSize="@dimen/_12sdp"
+            android:layout_below="@+id/tv_2bhk"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="3 BHK : Rs. 25 Lac - 2 Cr"
+            android:textColor="@color/black" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_below="@+id/tv_3bhk"
+            android:id="@+id/v_1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/light_grey"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arialmt"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:textSize="@dimen/_12sdp"
+            android:layout_below="@+id/v_1"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="See Properties"
+            android:textColor="@color/red" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -22,8 +22,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.tutorial.realestate.Adapter.BathroomAdapter;
+import com.tutorial.realestate.Adapter.Demandadapter;
 import com.tutorial.realestate.Adapter.FreshPropertyAdapter;
+import com.tutorial.realestate.Adapter.Localizedadapter;
+import com.tutorial.realestate.Adapter.NewlyLaunchedAdapter;
 import com.tutorial.realestate.Adapter.PrimeAdapter;
+import com.tutorial.realestate.Adapter.ReadyToMoveAdapter;
 import com.tutorial.realestate.Adapter.SlidingImage_Adapter;
 import com.tutorial.realestate.Fragments.AgentFragment;
 import com.tutorial.realestate.Fragments.BuyFragment;
@@ -45,12 +49,20 @@ public class HomeFragment extends Fragment {
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private ViewPager view_pager_ads;
     View root;
-    RecyclerView recycler_prime_member, recycler_fresh_property;
+    RecyclerView recycler_prime_member, recycler_fresh_property, recycler_ready_tomove, recycler_new_launch, recycler_demand, recycler_popular_local;
     LinearLayoutManager HorizontalLayout;
     RecyclerView.LayoutManager RecyclerViewLayoutManager;
     ArrayList<String> source;
     ArrayList<String> fresh_property;
+    ArrayList<String> readytomovelist;
+    ArrayList<String> newlyLaunchedlist;
+    ArrayList<String> demandList;
+    ArrayList<String> localizedList;
 
+    Localizedadapter localizedadapter;
+    Demandadapter demandadapter;
+    NewlyLaunchedAdapter newlyLaunchedAdapter;
+    ReadyToMoveAdapter readyToMoveAdapter;
     PrimeAdapter primeAdapter;
     FreshPropertyAdapter freshPropertyAdapter;
 
@@ -85,11 +97,104 @@ public class HomeFragment extends Fragment {
         recycler_fresh_property.setAdapter(freshPropertyAdapter);
         freshPropertyAdapter.notifyDataSetChanged();
 
+
+        recycler_ready_tomove = (RecyclerView) root.findViewById(R.id.recycler_ready_tomove);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_ready_tomove.setLayoutManager(RecyclerViewLayoutManager);
+        ReadyToMovePropertyList();
+        readyToMoveAdapter = new ReadyToMoveAdapter(readytomovelist);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_ready_tomove.setLayoutManager(HorizontalLayout);
+        recycler_ready_tomove.setAdapter(readyToMoveAdapter);
+        readyToMoveAdapter.notifyDataSetChanged();
+
+
+        recycler_new_launch = (RecyclerView) root.findViewById(R.id.recycler_new_launch);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_new_launch.setLayoutManager(RecyclerViewLayoutManager);
+        NewlyLaunchedPropertyList();
+        newlyLaunchedAdapter = new NewlyLaunchedAdapter(newlyLaunchedlist);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_new_launch.setLayoutManager(HorizontalLayout);
+        recycler_new_launch.setAdapter(newlyLaunchedAdapter);
+        newlyLaunchedAdapter.notifyDataSetChanged();
+
+
+        recycler_demand = (RecyclerView) root.findViewById(R.id.recycler_demand);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_demand.setLayoutManager(RecyclerViewLayoutManager);
+        DemadPropertyList();
+        demandadapter = new Demandadapter(demandList);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_demand.setLayoutManager(HorizontalLayout);
+        recycler_demand.setAdapter(demandadapter);
+        demandadapter.notifyDataSetChanged();
+
+
+        recycler_popular_local = (RecyclerView) root.findViewById(R.id.recycler_popular_local);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_popular_local.setLayoutManager(RecyclerViewLayoutManager);
+        LocalizedList();
+        localizedadapter = new Localizedadapter(localizedList);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_popular_local.setLayoutManager(HorizontalLayout);
+        recycler_popular_local.setAdapter(localizedadapter);
+        localizedadapter.notifyDataSetChanged();
+
+    }
+
+    private void LocalizedList() {
+        localizedList = new ArrayList<>();
+        localizedList.add("Noida Extension, Noida");
+        localizedList.add("Sector 62, Noida");
+        localizedList.add("Sector 137, Noida");
+        localizedList.add("White Field, Bangalore");
+        localizedList.add("Marathalli, Bangalore");
+
+    }
+
+    private void DemadPropertyList() {
+        demandList = new ArrayList<>();
+        demandList.add("\u20B9 Rs. 20 Lac-\u20B9 Rs. 88 Lac");
+        demandList.add("\u20B9 30 Lac-\u20B9 Rs. 1 Cr");
+        demandList.add("\u20B9 40 Lac-\u20B9 Rs. 80 Lac");
+        demandList.add("\u20B9 50 Lac-\u20B9 Rs. 60 Lac");
+        demandList.add("\u20B9 60 Lac-\u20B9 Rs. 2.5 Cr");
+        demandList.add("\u20B9 70 Lac-\u20B9 Rs. 50 Lac");
+        demandList.add("\u20B9 80 Lac-\u20B9 Rs. 48 Lac");
+        demandList.add("\u20B9 90 Lac-\u20B9 Rs. 38 Lac");
+
+    }
+
+    private void NewlyLaunchedPropertyList() {
+        newlyLaunchedlist = new ArrayList<>();
+        newlyLaunchedlist.add("\u20B9 Rs. 20 Lac-\u20B9 Rs. 88 Lac");
+        newlyLaunchedlist.add("\u20B9 30 Lac-\u20B9 Rs. 1 Cr");
+        newlyLaunchedlist.add("\u20B9 40 Lac-\u20B9 Rs. 80 Lac");
+        newlyLaunchedlist.add("\u20B9 50 Lac-\u20B9 Rs. 60 Lac");
+        newlyLaunchedlist.add("\u20B9 60 Lac-\u20B9 Rs. 2.5 Cr");
+        newlyLaunchedlist.add("\u20B9 70 Lac-\u20B9 Rs. 50 Lac");
+        newlyLaunchedlist.add("\u20B9 80 Lac-\u20B9 Rs. 48 Lac");
+        newlyLaunchedlist.add("\u20B9 90 Lac-\u20B9 Rs. 38 Lac");
+
+    }
+
+    private void ReadyToMovePropertyList() {
+        readytomovelist = new ArrayList<>();
+        readytomovelist.add("\u20B9 Rs. 20 Lac-\u20B9 Rs. 88 Lac");
+        readytomovelist.add("\u20B9 30 Lac-\u20B9 Rs. 1 Cr");
+        readytomovelist.add("\u20B9 40 Lac-\u20B9 Rs. 80 Lac");
+        readytomovelist.add("\u20B9 50 Lac-\u20B9 Rs. 60 Lac");
+        readytomovelist.add("\u20B9 60 Lac-\u20B9 Rs. 2.5 Cr");
+        readytomovelist.add("\u20B9 70 Lac-\u20B9 Rs. 50 Lac");
+        readytomovelist.add("\u20B9 80 Lac-\u20B9 Rs. 48 Lac");
+        readytomovelist.add("\u20B9 90 Lac-\u20B9 Rs. 38 Lac");
+
     }
 
     private void AddFreshPropertyList() {
         fresh_property = new ArrayList<>();
-        fresh_property.add("\u20B9 20 Lac");
+        fresh_property.add("\u20B9 Rs. 20 Lac");
         fresh_property.add("\u20B9 30 Lac");
         fresh_property.add("\u20B9 40 Lac");
         fresh_property.add("\u20B9 50 Lac");
