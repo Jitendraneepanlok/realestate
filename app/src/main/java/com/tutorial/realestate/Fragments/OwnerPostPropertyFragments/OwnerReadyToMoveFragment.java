@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,8 +29,9 @@ import java.util.ArrayList;
 public class OwnerReadyToMoveFragment extends Fragment {
     View view;
     AppCompatTextView tv_construction_age;
-    ArrayList<String> listdata;
     AppCompatButton btn_continue;
+    String[] ageconstraction = {"New Construction","Less than 5 years","5 to 10 years","10 to 15 years","15 to 20 years","Above 20 years"};
+
 
     @Nullable
     @Override
@@ -82,12 +84,8 @@ public class OwnerReadyToMoveFragment extends Fragment {
             }
         });
 
-        RecyclerView recycler_view_age_constraction = (RecyclerView) dialog.findViewById(R.id.recycler_view_age_constraction);
-        ConstructionAgeAdapter adapter = new ConstructionAgeAdapter(getActivity(), listdata);
-        LinearLayoutManager verticalLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        recycler_view_age_constraction.setLayoutManager(verticalLayoutManager);
-        ConstructionListData();
-        recycler_view_age_constraction.setItemAnimator(new DefaultItemAnimator());
+        ListView recycler_view_age_constraction = (ListView) dialog.findViewById(R.id.recycler_view_age_constraction);
+        ConstructionAgeAdapter adapter = new ConstructionAgeAdapter(getActivity(), ageconstraction);
         recycler_view_age_constraction.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -97,13 +95,4 @@ public class OwnerReadyToMoveFragment extends Fragment {
 
     }
 
-    private void ConstructionListData() {
-        listdata = new ArrayList<>();
-        listdata.add("New Construction");
-        listdata.add("Less than 5 years");
-        listdata.add("5 to 10 years");
-        listdata.add("10 to 15 years");
-        listdata.add("15 to 20 years");
-        listdata.add("Above 20 years");
-    }
 }

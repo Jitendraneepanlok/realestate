@@ -1,8 +1,10 @@
 package com.tutorial.realestate.Adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,39 +15,31 @@ import com.tutorial.realestate.R;
 
 import java.util.List;
 
-public class ConstructionAgeAdapter  extends RecyclerView.Adapter<ConstructionAgeAdapter.MyView> {
-    private List<String> listdata;
+public class ConstructionAgeAdapter extends ArrayAdapter<String> {
 
-    public class MyView extends RecyclerView.ViewHolder {
-        TextView tv_title;
-        ImageView img_down;
-        public MyView(View view) {
-            super(view);
-            tv_title = (TextView)view.findViewById(R.id.tv_title);
-            img_down = (ImageView)view.findViewById(R.id.img_down);
-        }
-    }
-    public ConstructionAgeAdapter(FragmentActivity activity, List<String> verticalList) {
-        this.listdata = verticalList;
-    }
-    @Override
-    public ConstructionAgeAdapter.MyView onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.floor_item_layout, parent, false);
-        return new ConstructionAgeAdapter.MyView(itemView);
-    }
-    @Override
-    public void onBindViewHolder(final ConstructionAgeAdapter.MyView holder, final int position) {
-        holder.tv_title.setText(listdata.get(position));
+    private final Activity context;
+    private final String[] maintitle;
+
+    public ConstructionAgeAdapter(Activity context, String[] maintitle) {
+        super(context, R.layout.bed_room_list, maintitle);
+        // TODO Auto-generated constructor stub
+        this.context = context;
+        this.maintitle = maintitle;
     }
 
-    @Override
-    public int getItemCount() {
-        return listdata.size();
+    public View getView(int position, View view, ViewGroup parent) {
+        LayoutInflater inflater = context.getLayoutInflater();
+        View rowView = inflater.inflate(R.layout.bed_room_list, null, true);
+
+        TextView titleText = (TextView) rowView.findViewById(R.id.title);
+
+        titleText.setText(maintitle[position]);
+
+        return rowView;
+
     }
+
+    ;
 }
-
-
-
-
 
 

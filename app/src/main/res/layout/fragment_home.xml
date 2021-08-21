@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,77 +8,218 @@
     tools:context=".NavigationActivity.ui.home.HomeFragment">
 
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_cart_count"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:background="@drawable/searchview_style"
-            app:queryHint="Search Here" />
+        android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/rlfirst"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager_ads"
+            <RelativeLayout
+                android:id="@+id/rlfirst"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_140sdp"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:layout_marginRight="@dimen/_5sdp" />
+                android:layout_height="wrap_content">
 
-            <com.viewpagerindicator.CirclePageIndicator
-                android:id="@+id/indicator"
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/searchview_style"
+                    app:queryHint="Search Here" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager_ads"
+                    android:layout_width="match_parent"
+                    android:layout_height="133dp"
+                    android:layout_below="@+id/search_bar"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="5dp" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150dp"
+                    android:gravity="center"
+                    app:centered="true"
+                    app:fillColor="#df0623"
+                    app:pageColor="@color/white"
+                    app:snap="false" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlsecond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_130sdp"
-                android:gravity="center"
-                app:centered="true"
-                app:fillColor="#df0623"
-                app:pageColor="@color/white"
-                app:snap="false" />
+                android:layout_below="@+id/rlfirst"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_crown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:src="@drawable/crown" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:text="@string/exclusive_prime_member"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_prime_member"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:layout_below="@+id/img_crown"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp" />
+
+                <LinearLayout
+                    android:id="@+id/lllogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler_prime_member"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/btn_style"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_8sdp">
 
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_crown" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="@string/upgrade_prime"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/indicator"
-                android:layout_centerHorizontal="true"
-                android:minHeight="?attr/actionBarSize"
-                app:tabGravity="fill"
-                app:tabIndicatorFullWidth="false"
-                android:visibility="gone"
-                app:tabMaxWidth="0dp"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/gray_demo"
-                app:tabTextColor="@color/gray" />
+                android:layout_below="@+id/rlsecond"
+                android:id="@+id/rlthird"
+                android:layout_marginTop="@dimen/_10sdp">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager"
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_fresh_property"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/txt_fresh_property"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/see_all"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:layout_below="@+id/txt_fresh_property"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/recycler_fresh_property"
+                    android:layout_marginRight="@dimen/_10sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tab_layout"
-                android:layout_marginTop="@dimen/_5sdp" />
+                android:layout_below="@+id/rlthird"
+                android:id="@+id/rlfourth"
+                android:layout_marginTop="@dimen/_40sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_ready_tomove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/txt_ready_tomove"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/arialmt"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/see_all"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:layout_below="@+id/txt_ready_tomove"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/recycler_ready_tomove"
+                    android:layout_marginRight="@dimen/_10sdp" />
+
+
+            </RelativeLayout>
 
 
         </RelativeLayout>
 
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-
-</LinearLayout>
+</RelativeLayout>
 
 
 

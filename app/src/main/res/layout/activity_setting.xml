@@ -45,7 +45,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_personal"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/manage_notify" />
 
                 <View
@@ -62,7 +61,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v1"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_clear_history" />
 
 
@@ -80,7 +78,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v2"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_clear_favrote" />
 
 
@@ -115,7 +112,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_information"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_term_condition" />
 
                 <View
@@ -132,7 +128,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v4"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_privacy_policy" />
 
 
@@ -150,7 +145,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v5"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_about_us" />
 
                 <View
@@ -167,7 +161,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v6"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_version" />
 
             </RelativeLayout>
@@ -200,7 +193,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_feedback"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/contact" />
 
                 <View
@@ -217,7 +209,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/v7"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:fontFamily="@font/arialmt"
                     android:text="@string/txt_share_app" />
 
 

@@ -309,6 +309,23 @@
     <string name="txt_share_app">Share the App</string>
     <string name="txt_acount">Update Accounts</string>
     <string name="update_profile">Update Profile</string>
+    <string name="clear_history">Clear History</string>
+    <string name="clear_property_hiatory">Clear Property History</string>
+    <string name="clear_agent_history">Clear Agent History</string>
+    <string name="clear_project_history">Clear Project History</string>
+    <string name="clear_favrote_hiatory">Clear Property Favorites</string>
+    <string name="clear_agent_favrote_history">Clear Agent Favorites</string>
+    <string name="clear_project_favrote_history">Clear Project Favorites</string>
+    <string name="clear_favrote">Clear Favorites</string>
+    <string name="write_feedback_us">Write your Feedback Us</string>
+    <string name="exclusive_prime_member">Exclusively For Prime Members</string>
+    <string name="upgrade_prime">Upgrade to Prime</string>
+    <string name="owner_property">OWNER PROPERTY</string>
+    <string name="posted_date">posted on Apr 28, 21</string>
+    <string name="sector">in Sector 137</string>
+    <string name="txt_fresh_property">Fresh Properties for you</string>
+    <string name="see_all">See All</string>
+    <string name="txt_ready_tomove">Ready to move Projects</string>
 
 
 </resources>

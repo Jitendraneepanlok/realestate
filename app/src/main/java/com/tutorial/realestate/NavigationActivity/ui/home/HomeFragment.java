@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,9 +16,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.tutorial.realestate.Adapter.BathroomAdapter;
+import com.tutorial.realestate.Adapter.FreshPropertyAdapter;
+import com.tutorial.realestate.Adapter.PrimeAdapter;
 import com.tutorial.realestate.Adapter.SlidingImage_Adapter;
 import com.tutorial.realestate.Fragments.AgentFragment;
 import com.tutorial.realestate.Fragments.BuyFragment;
@@ -32,30 +38,81 @@ import java.util.TimerTask;
 
 
 public class HomeFragment extends Fragment {
-    TabLayout tab_layout;
-    ViewPager view_pager;
     private HomeViewModel homeViewModel;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private static final Integer[] IMAGES = {R.drawable.login_1, R.drawable.login_1, R.drawable.login_1, R.drawable.login_1};
+    private static final Integer[] IMAGES = {R.drawable.banner_images, R.drawable.banner_images, R.drawable.banner_images, R.drawable.banner_images};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private ViewPager view_pager_ads;
     View root;
+    RecyclerView recycler_prime_member, recycler_fresh_property;
+    LinearLayoutManager HorizontalLayout;
+    RecyclerView.LayoutManager RecyclerViewLayoutManager;
+    ArrayList<String> source;
+    ArrayList<String> fresh_property;
+
+    PrimeAdapter primeAdapter;
+    FreshPropertyAdapter freshPropertyAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         root = inflater.inflate(R.layout.fragment_home, container, false);
-       /* tab_layout = root.findViewById(R.id.tab_layout);
-        tab_layout.setTabGravity(TabLayout.GRAVITY_FILL);
-        view_pager = root.findViewById(R.id.view_pager);
-        tab_layout.setupWithViewPager(view_pager);
-        AddTabsToFragments();*/
 
-        SecondViewPager();
+        ViewPager();
+        initView();
         return root;
     }
 
-    private void SecondViewPager() {
+    private void initView() {
+        recycler_prime_member = (RecyclerView) root.findViewById(R.id.recycler_prime_member);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_prime_member.setLayoutManager(RecyclerViewLayoutManager);
+        AddPrimeList();
+        primeAdapter = new PrimeAdapter(source);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_prime_member.setLayoutManager(HorizontalLayout);
+        recycler_prime_member.setAdapter(primeAdapter);
+        primeAdapter.notifyDataSetChanged();
+
+
+        recycler_fresh_property = (RecyclerView) root.findViewById(R.id.recycler_fresh_property);
+        RecyclerViewLayoutManager = new LinearLayoutManager(getActivity());
+        recycler_fresh_property.setLayoutManager(RecyclerViewLayoutManager);
+        AddFreshPropertyList();
+        freshPropertyAdapter = new FreshPropertyAdapter(fresh_property);
+        HorizontalLayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_fresh_property.setLayoutManager(HorizontalLayout);
+        recycler_fresh_property.setAdapter(freshPropertyAdapter);
+        freshPropertyAdapter.notifyDataSetChanged();
+
+    }
+
+    private void AddFreshPropertyList() {
+        fresh_property = new ArrayList<>();
+        fresh_property.add("\u20B9 20 Lac");
+        fresh_property.add("\u20B9 30 Lac");
+        fresh_property.add("\u20B9 40 Lac");
+        fresh_property.add("\u20B9 50 Lac");
+        fresh_property.add("\u20B9 60 Lac");
+        fresh_property.add("\u20B9 70 Lac");
+        fresh_property.add("\u20B9 80 Lac");
+        fresh_property.add("\u20B9 90 Lac");
+    }
+
+    private void AddPrimeList() {
+        source = new ArrayList<>();
+        source.add("1 BHK Flat | \u20B9 20 Lac");
+        source.add("2 BHK Flat | \u20B9 30 Lac");
+        source.add("3 BHK Flat | \u20B9 40 Lac");
+        source.add("4 BHK Flat | \u20B9 50 Lac");
+        source.add("5 BHK Flat | \u20B9 60 Lac");
+        source.add("6 BHK Flat | \u20B9 70 Lac");
+        source.add("7 BHK Flat | \u20B9 80 Lac");
+        source.add("8 BHK Flat | \u20B9 90 Lac");
+
+    }
+
+    private void ViewPager() {
         for (int i = 0; i < IMAGES.length; i++)
             ImagesArray.add(IMAGES[i]);
         view_pager_ads = (ViewPager) root.findViewById(R.id.view_pager_ads);
@@ -105,47 +162,4 @@ public class HomeFragment extends Fragment {
         });
 
     }
-
-
-   /* private void AddTabsToFragments() {
-        HomeFragment.ViewPagerAdapter viewPagerAdapter = new HomeFragment.ViewPagerAdapter(this.getChildFragmentManager());
-        viewPagerAdapter.addFrag(new BuyFragment(), getString(R.string.buy));
-        viewPagerAdapter.addFrag(new RentFragment(), getString(R.string.rent));
-        viewPagerAdapter.addFrag(new AgentFragment(), getString(R.string.agent));
-
-        view_pager.setAdapter(viewPagerAdapter);
-    }
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
-    }
-
-*/
 }

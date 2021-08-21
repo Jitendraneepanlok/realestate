@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/rl_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
@@ -29,7 +24,7 @@
             android:layout_margin="@dimen/_5sdp"
             android:src="@drawable/ic_cancel" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ListView
             android:id="@+id/recycler_view_age_constraction"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,7 +33,6 @@
             android:paddingLeft="@dimen/_10sdp"
             android:paddingRight="@dimen/_10sdp" />
 
-    </RelativeLayout>
 
 
 </RelativeLayout>
