@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        card_view:cardElevation="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tv_exclusive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="REALESTATE EXCLUSIVE"
+                android:textColor="@color/green"
+                android:textSize="@dimen/songs_count"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_below="@+id/tv_exclusive"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/imgage_style"
+                android:clickable="true"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/login_1" />
+
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="@string/price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/songs_count"
+                android:textStyle="bold" />
+
+
+            <View
+                android:id="@+id/price_view"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_toRightOf="@+id/tv_price"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@color/light_grey" />
+
+            <TextView
+                android:id="@+id/tv_price_monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_toRightOf="@+id/price_view"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="@string/price_monthly"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/songs_count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price_monthly"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/price_view"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="Maintenance"
+                android:id="@+id/tv_maintenance"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/songs_count" />
+
+            <TextView
+                android:id="@+id/txt_rent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="@string/rent"
+                android:textColor="@color/gray" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/ic_favorite" />
+
+            <TextView
+                android:id="@+id/txt_bhk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_rent"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="2 BHK Flat  1000 Sqft"
+                android:textColor="@color/black" />
+
+
+
+            <TextView
+                android:id="@+id/txt_loction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_bhk"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="Sector 137 , Noida"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/txt_bathroom_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_loction"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="2 Bath   Semi - Furnished"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_tick_2"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:id="@+id/img_tick"
+                android:layout_below="@+id/thumbnail"/>
+
+            <TextView
+                android:id="@+id/tv_face"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img_tick"
+                android:paddingRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="East Facing Property"
+                android:textColor="@color/red"
+                android:textSize="@dimen/songs_count"
+                android:layout_below="@+id/thumbnail"/>
+
+            <TextView
+                android:id="@+id/text_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_tick"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/btn_style_gray"
+                android:fontFamily="@font/arialmt"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Save"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_tick"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toRightOf="@id/text_save"
+                android:background="@drawable/btn_style_gray"
+                android:fontFamily="@font/arialmt"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:singleLine="true"
+                android:text="Get Phone No. "
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txt_call_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_tick"
+                android:layout_toRightOf="@id/txt_phone"
+                android:background="@drawable/btn_style_blue"
+                android:fontFamily="@font/arialmt"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:singleLine="true"
+                android:drawableLeft="@drawable/ic_phone_white"
+                android:text="@string/Call_Owner"
+                android:textColor="@color/white" />
+
+            <!--
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/thumbnail"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/arialmt"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:singleLine="true"
+                            android:text="@string/app_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvlocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/title"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableLeft="@drawable/ic_location"
+                            android:fontFamily="@font/arialmt"
+                            android:singleLine="true"
+                            android:text=" Chennai, Tamil Nadu"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tv_sqft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvlocation"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableLeft="@drawable/ic_open"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text=" 0 Sq. Ft"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvbathroom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvlocation"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="@dimen/_120sdp"
+                            android:layout_marginTop="7dp"
+                            android:layout_toRightOf="@id/tv_sqft"
+                            android:drawableLeft="@drawable/ic_baseline_single_bed_24"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:singleLine="true"
+                            android:text=" Bathroom"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/album_title" />
+
+
+                        <TextView
+                            android:id="@+id/tv_move"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_sqft"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:drawableLeft="@drawable/ic_list"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text=" Ready to Move"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/tvfloor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvbathroom"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="@dimen/_120sdp"
+                            android:layout_marginTop="7dp"
+                            android:layout_toRightOf="@id/tv_move"
+                            android:drawableLeft="@drawable/ic_list"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:singleLine="true"
+                            android:text=" 3 Floor"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/album_title" />
+
+
+                        <TextView
+                            android:id="@+id/twodays"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_move"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toRightOf="@id/thumbnail"
+                            android:background="@drawable/btn_style_blue"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:text="2 days ago"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/semifurnished"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_move"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="98dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_toRightOf="@id/twodays"
+                            android:background="@drawable/btn_style"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:text="Semi Furnished"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/textprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_move"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="220dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toRightOf="@id/semifurnished"
+                            android:background="@drawable/btn_style_green"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_3sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_3sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:singleLine="true"
+                            android:text="Price Negotiable"
+                            android:textColor="@color/white" />
+
+                        <View
+                            android:id="@+id/line_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_below="@+id/twodays"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@color/light_grey" />
+
+
+                        <TextView
+                            android:id="@+id/tvprice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/line_view"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/arialmt"
+                            android:text="Rs. 1.92 Cr"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvprice"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/arialmt"
+                            android:text="Individual : Aditya"
+                            android:textColor="@color/black" />
+
+
+                        <TextView
+                            android:id="@+id/tvconect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvprice"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="250dp"
+                            android:layout_marginTop="-16dp"
+                            android:layout_toRightOf="@id/tvprice"
+                            android:background="@drawable/btn_style_green"
+                            android:fontFamily="@font/arialmt"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_7sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_7sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="Contact"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:textSize="@dimen/songs_count"
+                            android:visibility="gone" />-->
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

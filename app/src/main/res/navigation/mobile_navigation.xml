@@ -33,7 +33,17 @@
             app:destination="@id/nav_agent"
             app:exitAnim="@anim/nav_default_exit_anim" />
 
+        <action android:id="@+id/action_home_to_seeAllPropertyFragment"
+            app:destination="@id/nav_see_all"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_see_all"
+        android:name="com.tutorial.realestate.NavigationActivity.ui.home.SellAllPropertyFragment"
+        android:label="@string/see_all"
+        tools:layout="@layout/fragment_see_all_property"/>
 
     <fragment
         android:id="@+id/nav_agent"

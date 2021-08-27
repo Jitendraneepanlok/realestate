@@ -302,6 +302,7 @@
     <string name="txt_clear_history">Clear History</string>
     <string name="txt_clear_favrote">Clear Favorites</string>
     <string name="txt_information">Information &amp; Support</string>
+    <string name="short_filetr">Sort &amp; Filter</string>
     <string name="txt_term_condition">Terms and Conditions</string>
     <string name="txt_privacy_policy">Privacy policy</string>
     <string name="txt_about_us">About Us</string>
@@ -334,6 +335,10 @@
     <string name="txt_demand">Project in Demand</string>
     <string name="txt_popular_local">popular Localities</string>
     <string name="txt_feature">Featured Projects</string>
-
+    <string name="price">\u20B9 15,500 </string>
+    <string name="price_monthly">\u20B9 4800 monthly </string>
+    <string name="and_cahback">&amp; earn &amp; cashbacks &amp; offers upto \u20B9 23,000</string>
+    <string name="get_more_options">Get more options. Allow other advertisers with similar properties to contact you.</string>
+    <string name="your_verification">Your details are for verification purpose only, and won\'t be shared with the Advertiser.</string>
 
 </resources>

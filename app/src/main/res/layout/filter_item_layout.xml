@@ -7,7 +7,10 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:paddingBottom="@dimen/_5sdp"
-    android:background="@drawable/edittext_style">
+    android:layout_margin="@dimen/_5sdp"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:background="@drawable/btn_style_gray">
 
     <TextView
         android:layout_width="wrap_content"
