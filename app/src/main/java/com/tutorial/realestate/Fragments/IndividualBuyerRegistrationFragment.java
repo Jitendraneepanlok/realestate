@@ -144,7 +144,8 @@ public class IndividualBuyerRegistrationFragment extends Fragment {
         registrationModel.setRegEmail(Email);
         registrationModel.setRegUserPassword(password);
         registrationModel.setCountryCode("+91");
-        registrationModel.setUserType(SelectedValue);
+//        registrationModel.setUserType(SelectedValue);
+        registrationModel.setUserType("Buyer");
 
         RegistrationConsModel registrationConsModel = new RegistrationConsModel();
         registrationConsModel.setRealstate(registrationModel);

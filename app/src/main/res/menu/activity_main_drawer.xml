@@ -12,27 +12,27 @@
 
         <item
             android:id="@+id/nav_buy_properties"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/buy_property"
             android:title="@string/menu_buy_properties" />
 
         <item
             android:id="@+id/nav_rent_properties"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_rent_house"
             android:title="@string/menu_rent_properties" />
 
         <item
             android:id="@+id/nav_agent"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_builder"
             android:title="@string/agent" />
 
         <item
             android:id="@+id/nav_new_properties"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_new_property"
             android:title="@string/menu_new_properties" />
 
         <item
             android:id="@+id/nav_explore_properties"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/explore"
             android:title="@string/menu_explore_properties" />
 
 
@@ -43,11 +43,11 @@
 
         <item
             android:id="@+id/nav_postproperty"
-            android:icon="@drawable/ic_feature"
+            android:icon="@drawable/ic_post_property"
             android:title="@string/post_properties" />
         <item
             android:id="@+id/nav_advertise"
-            android:icon="@drawable/ic_feature"
+            android:icon="@drawable/ic_advertise_us"
             android:title="@string/advertise" />
 
     </group>

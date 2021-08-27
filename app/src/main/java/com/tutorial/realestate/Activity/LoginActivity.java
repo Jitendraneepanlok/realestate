@@ -93,8 +93,8 @@ public class LoginActivity extends AppCompatActivity {
         lllogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //    Validation();
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                Validation();
+               // startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
         cb_remember = (CheckBox) findViewById(R.id.cb_remember);
