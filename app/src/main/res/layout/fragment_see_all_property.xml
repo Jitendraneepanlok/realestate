@@ -9,12 +9,12 @@
         layout="@layout/sell_all" />
 
     <RelativeLayout
+        android:id="@+id/rl_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/see_all"
         android:background="@drawable/btn_style_gray"
         android:paddingTop="@dimen/_5sdp"
-        android:id="@+id/rl_filter"
         android:paddingBottom="@dimen/_5sdp">
 
         <RelativeLayout
@@ -30,8 +30,8 @@
                 android:drawableLeft="@drawable/ic_filter"
                 android:gravity="center"
                 android:maxLines="1"
-                android:paddingRight="@dimen/_5sdp"
                 android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
                 android:singleLine="true"
                 android:text="@string/short_filetr"
@@ -41,11 +41,11 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/filers_recycler"
                 android:layout_width="match_parent"
-                android:scrollbars="horizontal"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_100sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginLeft="@dimen/_100sdp" />
+                android:scrollbars="horizontal" />
 
 
         </RelativeLayout>
@@ -67,13 +67,13 @@
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
+                    android:id="@+id/rl_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     android:background="@drawable/btn_style_sky_blue"
                     android:paddingTop="@dimen/_5sdp"
-                    android:id="@+id/rl_desc"
                     android:paddingBottom="@dimen/_5sdp">
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -85,12 +85,10 @@
                         android:src="@drawable/credit_card_hand" />
 
 
-
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_upto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/txt_did_you"
                         android:fontFamily="@font/arialmt"
                         android:paddingLeft="@dimen/_40sdp"
                         android:paddingRight="@dimen/_10sdp"
@@ -102,8 +100,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txt_upto"
-                        android:fontFamily="@font/arialmt"
                         android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/arialmt"
                         android:paddingLeft="@dimen/_40sdp"
                         android:paddingRight="@dimen/_5sdp"
                         android:text="@string/and_cahback"
@@ -114,34 +112,34 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txt_paying_rent"
-                        android:fontFamily="@font/arialmt"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/arialmt"
                         android:paddingLeft="@dimen/_40sdp"
                         android:paddingRight="@dimen/_5sdp"
                         android:text="Pay Now"
-                        android:textSize="@dimen/_14sdp"
-                        android:textColor="@color/red" />
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_14sdp" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_arrow_right_red"
-                        android:layout_toRightOf="@+id/txt_paynow"
                         android:layout_below="@+id/txt_paying_rent"
-                        android:layout_marginTop="@dimen/_5sdp"/>
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/txt_paynow"
+                        android:src="@drawable/ic_arrow_right_red" />
 
 
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_rent_property"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rl_desc"
-                    android:id="@+id/recycler_rent_property"
                     android:layout_marginLeft="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"/>
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp" />
 
 
             </RelativeLayout>
@@ -151,5 +149,58 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:background="@drawable/btn_style_white_filter"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/btn_style_red_filter"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_prime_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prime_filter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_toRightOf="@+id/tv_prime_filter"
+                android:background="@color/white"
+                android:id="@+id/fiter_view"
+                android:layout_marginLeft="@dimen/_10sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_saved_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/fiter_view"
+                android:text="@string/saved_searched"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

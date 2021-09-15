@@ -340,5 +340,11 @@
     <string name="and_cahback">&amp; earn &amp; cashbacks &amp; offers upto \u20B9 23,000</string>
     <string name="get_more_options">Get more options. Allow other advertisers with similar properties to contact you.</string>
     <string name="your_verification">Your details are for verification purpose only, and won\'t be shared with the Advertiser.</string>
+    <string name="prime_filter">Prime Filters</string>
+    <string name="reset">Reset</string>
+    <string name="furnish_status">Furnishing Status</string>
+    <string name="txt_amenities">Amenities</string>
+    <string name="txt_photos_video">Photos / Videos</string>
+    <string name="txt_facing">Facing</string>
 
 </resources>

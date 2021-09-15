@@ -43,7 +43,14 @@
         android:theme="@style/AppTheme">
 
         <meta-data
-            android:name="android.allow_multiple_resumed_activities" android:value="true" />
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="true" />
+
+        <activity
+            android:name=".Activity.Filters.PrimeFilterActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustNothing"/>
 
         <activity
             android:name=".Activity.NotificaionSettingActivity"

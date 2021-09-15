@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/btn_red_style.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/btn_style_red.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/btn_style_red_filter.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/btn_style_sky_blue.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/btn_style_white_filter.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/ic_close.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/ic_close_2.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/ic_crown.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/ic_crown_yellow.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25625" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/activity_prime_filter.xml" value="0.264" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/almost_list_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/amnitish_list_row.xml" value="0.264" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/bedroom_item_layout.xml" value="0.25729166666666664" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/facing_item_layout.xml" value="0.25729166666666664" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/fragment_prime_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/fragment_see_all_property.xml" value="0.264" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/fragment_start_almost_property.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/furnished_list_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/layout/prime_filter.xml" value="0.264" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25625" />
+        <entry key="..\:/Neepanlok Projects/RealEstate/RealEstate/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

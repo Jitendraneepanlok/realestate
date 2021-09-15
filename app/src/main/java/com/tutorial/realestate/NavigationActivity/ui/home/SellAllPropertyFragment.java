@@ -10,11 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tutorial.realestate.Activity.Filters.PrimeFilterActivity;
 import com.tutorial.realestate.Adapter.BuyAdapter;
 import com.tutorial.realestate.Adapter.CommercialAdapter;
 import com.tutorial.realestate.Adapter.FilterAdapter;
@@ -36,16 +40,31 @@ public class SellAllPropertyFragment extends Fragment {
     AppCompatImageView img_back;
     private List<Album> albumList;
     PropertyRentAdapter propertyRentAdapter;
+    AppCompatTextView tv_prime_filter, tv_saved_search;
+    NavController navController;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_see_all_property, container, false);
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+
         initView();
         return view;
     }
 
     private void initView() {
+        tv_prime_filter = (AppCompatTextView) view.findViewById(R.id.tv_prime_filter);
+        tv_prime_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), PrimeFilterActivity.class));
+            }
+        });
+        tv_saved_search = (AppCompatTextView) view.findViewById(R.id.tv_saved_search);
+
+
         img_back = (AppCompatImageView) view.findViewById(R.id.img_back);
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
