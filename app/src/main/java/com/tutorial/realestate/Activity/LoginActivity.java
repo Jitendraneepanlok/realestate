@@ -51,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
     Boolean ischecked = false;
     CheckBox cb_remember;
+
+// we need to showing a demo to upldate on git.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

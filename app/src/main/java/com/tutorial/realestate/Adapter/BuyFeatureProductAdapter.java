@@ -1,8 +1,6 @@
 package com.tutorial.realestate.Adapter;
 
 import android.content.Context;
-import android.graphics.drawable.PictureDrawable;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +10,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.model.StreamEncoder;
-import com.caverock.androidsvg.SVG;
-import com.tutorial.realestate.Helper.Album;
-import com.tutorial.realestate.Helper.SvgSoftwareLayerSetter;
 import com.tutorial.realestate.Pojo.FeaturePropertiesContantPojo;
 import com.tutorial.realestate.Pojo.FeaturedPropertyPojo;
-import com.tutorial.realestate.Pojo.FeaturedPropertyResponse;
 import com.tutorial.realestate.R;
-
-import java.io.InputStream;
-import java.util.List;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 

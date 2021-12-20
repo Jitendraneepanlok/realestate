@@ -46,6 +46,8 @@ public class PrimeFilterActivity extends AppCompatActivity {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.title_bar_color));
         }
+
+
         initView();
         FurnishedStatus();
         AmenitiesDetails();
