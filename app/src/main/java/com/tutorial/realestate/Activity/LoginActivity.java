@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
     Boolean ischecked = false;
     CheckBox cb_remember;
 
-// we need to showing a demo to upldate on git.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
